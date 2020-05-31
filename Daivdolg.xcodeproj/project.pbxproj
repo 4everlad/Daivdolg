@@ -10,22 +10,24 @@
 		D711BD47248430F50099EB69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD46248430F50099EB69 /* AppDelegate.swift */; };
 		D711BD49248430F50099EB69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD48248430F50099EB69 /* SceneDelegate.swift */; };
 		D711BD4B248430F50099EB69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD4A248430F50099EB69 /* ViewController.swift */; };
-		D711BD4E248430F50099EB69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D711BD4C248430F50099EB69 /* Main.storyboard */; };
 		D711BD51248430F50099EB69 /* Daivdolg.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D711BD4F248430F50099EB69 /* Daivdolg.xcdatamodeld */; };
 		D711BD53248430F70099EB69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D711BD52248430F70099EB69 /* Assets.xcassets */; };
 		D711BD56248430F70099EB69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D711BD54248430F70099EB69 /* LaunchScreen.storyboard */; };
+		E0BE0542B10C025176903C1A /* Pods_Daivdolg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D911F1BCD3C27EF3364AA5 /* Pods_Daivdolg.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EBFB6CD46BB0AECF0ACDF3E /* Pods-Daivdolg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daivdolg.debug.xcconfig"; path = "Target Support Files/Pods-Daivdolg/Pods-Daivdolg.debug.xcconfig"; sourceTree = "<group>"; };
+		70D911F1BCD3C27EF3364AA5 /* Pods_Daivdolg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daivdolg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D711BD43248430F50099EB69 /* Daivdolg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daivdolg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D711BD46248430F50099EB69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D711BD48248430F50099EB69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D711BD4A248430F50099EB69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D711BD4D248430F50099EB69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D711BD50248430F50099EB69 /* Daivdolg.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Daivdolg.xcdatamodel; sourceTree = "<group>"; };
 		D711BD52248430F70099EB69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D711BD55248430F70099EB69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D711BD57248430F70099EB69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F78C0F06A8A2EE0C5C402620 /* Pods-Daivdolg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daivdolg.release.xcconfig"; path = "Target Support Files/Pods-Daivdolg/Pods-Daivdolg.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0BE0542B10C025176903C1A /* Pods_Daivdolg.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08DBAF87D081AA89ED61447C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70D911F1BCD3C27EF3364AA5 /* Pods_Daivdolg.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		569FB9084B9804A6B1A51A9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EBFB6CD46BB0AECF0ACDF3E /* Pods-Daivdolg.debug.xcconfig */,
+				F78C0F06A8A2EE0C5C402620 /* Pods-Daivdolg.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D711BD3A248430F50099EB69 = {
 			isa = PBXGroup;
 			children = (
 				D711BD45248430F50099EB69 /* Daivdolg */,
 				D711BD44248430F50099EB69 /* Products */,
+				569FB9084B9804A6B1A51A9D /* Pods */,
+				08DBAF87D081AA89ED61447C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,7 +84,6 @@
 				D711BD46248430F50099EB69 /* AppDelegate.swift */,
 				D711BD48248430F50099EB69 /* SceneDelegate.swift */,
 				D711BD4A248430F50099EB69 /* ViewController.swift */,
-				D711BD4C248430F50099EB69 /* Main.storyboard */,
 				D711BD52248430F70099EB69 /* Assets.xcassets */,
 				D711BD54248430F70099EB69 /* LaunchScreen.storyboard */,
 				D711BD57248430F70099EB69 /* Info.plist */,
@@ -77,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D711BD5A248430F70099EB69 /* Build configuration list for PBXNativeTarget "Daivdolg" */;
 			buildPhases = (
+				AFC7BE8491E1BACF149766FF /* [CP] Check Pods Manifest.lock */,
 				D711BD3F248430F50099EB69 /* Sources */,
 				D711BD40248430F50099EB69 /* Frameworks */,
 				D711BD41248430F50099EB69 /* Resources */,
+				C618E3B5489763B4A7403F31 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,11 +154,52 @@
 			files = (
 				D711BD56248430F70099EB69 /* LaunchScreen.storyboard in Resources */,
 				D711BD53248430F70099EB69 /* Assets.xcassets in Resources */,
-				D711BD4E248430F50099EB69 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AFC7BE8491E1BACF149766FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Daivdolg-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C618E3B5489763B4A7403F31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daivdolg/Pods-Daivdolg-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daivdolg/Pods-Daivdolg-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Daivdolg/Pods-Daivdolg-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D711BD3F248430F50099EB69 /* Sources */ = {
@@ -151,14 +216,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D711BD4C248430F50099EB69 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D711BD4D248430F50099EB69 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D711BD54248430F70099EB69 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,6 +343,7 @@
 		};
 		D711BD5B248430F70099EB69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EBFB6CD46BB0AECF0ACDF3E /* Pods-Daivdolg.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +362,7 @@
 		};
 		D711BD5C248430F70099EB69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F78C0F06A8A2EE0C5C402620 /* Pods-Daivdolg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
