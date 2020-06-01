@@ -28,7 +28,10 @@ class Currencies {
   
   // MARK: - Init
   init() {
-    getCurrencies()
+    let queue = DispatchQueue.global(qos: .utility)
+    queue.async {
+      self.getCurrencies()
+    }
   }
   
   func filterCurrencies(searchText: String) {
