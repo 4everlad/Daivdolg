@@ -12,7 +12,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
-  var coreDataStack = CoreDataStack()
+  var coreDataStack = CoreDataStack() // почему это здесь?
   let notifications = Notifications()
   
   func application(_ application: UIApplication,
@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
   }
   
+    // удалить
   func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     
   }

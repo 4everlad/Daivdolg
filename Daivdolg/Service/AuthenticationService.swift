@@ -13,10 +13,15 @@ enum AuthenticationState {
   case loggedIn, loggedOut
 }
 
+// несколько раз создаются объекты этого типа, все объекты будут одинаковые
+// либо сделать поля/методы статическими
+// либо singleton
 class AuthenticationService {
   
   var state = AuthenticationState.loggedOut
   
+    // MethodHandler странное название
+    // Наверное оно должно возвращать bool -- удалось авторизоваться или нет 
   func getAuthenticated(method: @escaping MethodHandler) {
     if state == .loggedIn {
       state = .loggedOut

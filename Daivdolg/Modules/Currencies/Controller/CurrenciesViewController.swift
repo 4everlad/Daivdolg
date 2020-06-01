@@ -98,6 +98,7 @@ extension CurrenciesViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // guard let
     if isFiltering {
       let currencyCode = currenciesList.getFilteredCurrencyCode(at: indexPath.row)
       delegate?.setCurrency(code: currencyCode)

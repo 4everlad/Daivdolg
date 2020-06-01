@@ -8,5 +8,6 @@
 
 import Foundation
 
+// ??
 typealias VoidClosure = () -> Void
 typealias MethodHandler = () -> Void

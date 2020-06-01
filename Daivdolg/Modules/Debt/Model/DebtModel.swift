@@ -17,11 +17,13 @@ class DebtModel {
   var creationDate: Date
   
   //  следовал принципу инкапсуляции
+    // почему тогда поле name доступно для изменения из вне?
   func setContactName(name: String) {
     self.name = name
   }
   
   //  Так как это базовая модель с полями, могут ли быть тут функции для проверки, или ее нужно перенести в контроллер
+    // могут 
   func isDebtReadyToCreate() -> Bool {
     if name != nil && amount != nil {
       return true

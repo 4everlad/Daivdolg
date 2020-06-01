@@ -117,6 +117,7 @@ class DebtBook {
       } else if debt.type == .borrow {
         type = Constants.Texts.Debt.borrow
       }
+        // можно все в один guard let засунить
       guard let name = debt.name else { return }
       guard let amount = debt.amount else { return }
       guard let currency = debt.currency else { return }

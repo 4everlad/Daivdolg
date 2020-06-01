@@ -28,6 +28,7 @@ class Currencies {
   
   // MARK: - Init
   init() {
+    // выглядит странно, по идее должно быть внутри APIRequestFetcher
     let queue = DispatchQueue.global(qos: .utility)
     queue.async {
       self.getCurrencies()
@@ -88,7 +89,7 @@ class Currencies {
     do {
       let decoder = JSONDecoder()
       let currencies = try decoder.decode([String: String].self, from: data)
-      self.currencies = currencies.map({ Currency(code: $0.key, name: $0.value) })
+        self.currencies = currencies.map({ Currency(code: $0.key, name: $0.value) })
     } catch {
       return
     }

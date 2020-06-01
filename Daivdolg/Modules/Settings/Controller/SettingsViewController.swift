@@ -24,6 +24,7 @@ class SettingsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationItem.title = Constants.Texts.Settings.title
+    // дубликат
     if userDataStorage.isAuthenticationRequired {
       authenticationSwitch.isOn = true
     } else {
@@ -47,7 +48,7 @@ class SettingsViewController: UIViewController {
     if notificationsSwitch.isOn {
       notifications.requestAutorization()
       userDataStorage.isNotificationsRequired = true
-    } else if !notificationsSwitch.isOn {
+    } else if !notificationsSwitch.isOn { // ненужное условие!!!
       userDataStorage.isNotificationsRequired = false
     }
   }
@@ -57,7 +58,7 @@ class SettingsViewController: UIViewController {
     if self.authenticationSwitch.isOn {
       userDataStorage.isAuthenticationRequired = true
       state = .loggedIn
-    } else if !self.authenticationSwitch.isOn {
+    } else if !self.authenticationSwitch.isOn { // ненужное условие!!!
       userDataStorage.isAuthenticationRequired = false
       state = .loggedOut
     }

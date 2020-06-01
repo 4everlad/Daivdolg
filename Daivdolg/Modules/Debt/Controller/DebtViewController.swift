@@ -79,6 +79,7 @@ class DebtViewController: UIViewController {
   }
   
   private func configureDebtView() {
+    //switch debtStatus { case .new: ... }
     if debtStatus == .new {
       createButton.isEnabled = false
       lendDebtButton.isEnabled = false
@@ -247,3 +248,5 @@ extension DebtViewController: CurrenciesViewControllerDelegate {
   }
   
 }
+
+// private extension DebtViewController { все приватные методы}
