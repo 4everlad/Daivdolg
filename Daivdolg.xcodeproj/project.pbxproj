@@ -35,6 +35,12 @@
 		D711BD9B2485007F0099EB69 /* DebtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD992485007F0099EB69 /* DebtCell.swift */; };
 		D711BD9C2485007F0099EB69 /* DebtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D711BD9A2485007F0099EB69 /* DebtCell.xib */; };
 		D711BD9E248500D60099EB69 /* DebtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD9D248500D60099EB69 /* DebtsViewController.swift */; };
+		D711BDA7248502620099EB69 /* DebtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D711BDA3248502620099EB69 /* DebtViewController.xib */; };
+		D711BDA8248502620099EB69 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BDA4248502620099EB69 /* DateView.swift */; };
+		D711BDA9248502620099EB69 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BDA5248502620099EB69 /* ContactView.swift */; };
+		D711BDAA248502620099EB69 /* CreateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BDA6248502620099EB69 /* CreateButton.swift */; };
+		D711BDAC248502A70099EB69 /* DebtModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BDAB248502A70099EB69 /* DebtModel.swift */; };
+		D711BDAE248502DD0099EB69 /* DebtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BDAD248502DD0099EB69 /* DebtViewController.swift */; };
 		E0BE0542B10C025176903C1A /* Pods_Daivdolg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D911F1BCD3C27EF3364AA5 /* Pods_Daivdolg.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +77,12 @@
 		D711BD992485007F0099EB69 /* DebtCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtCell.swift; sourceTree = "<group>"; };
 		D711BD9A2485007F0099EB69 /* DebtCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebtCell.xib; sourceTree = "<group>"; };
 		D711BD9D248500D60099EB69 /* DebtsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtsViewController.swift; sourceTree = "<group>"; };
+		D711BDA3248502620099EB69 /* DebtViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebtViewController.xib; sourceTree = "<group>"; };
+		D711BDA4248502620099EB69 /* DateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		D711BDA5248502620099EB69 /* ContactView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		D711BDA6248502620099EB69 /* CreateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateButton.swift; sourceTree = "<group>"; };
+		D711BDAB248502A70099EB69 /* DebtModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtModel.swift; sourceTree = "<group>"; };
+		D711BDAD248502DD0099EB69 /* DebtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtViewController.swift; sourceTree = "<group>"; };
 		F78C0F06A8A2EE0C5C402620 /* Pods-Daivdolg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daivdolg.release.xcconfig"; path = "Target Support Files/Pods-Daivdolg/Pods-Daivdolg.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +189,7 @@
 			children = (
 				D711BD812484FAF70099EB69 /* Currencies */,
 				D711BD902484FF4E0099EB69 /* DebtBook */,
+				D711BD9F248501AA0099EB69 /* Debt */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -269,6 +282,43 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		D711BD9F248501AA0099EB69 /* Debt */ = {
+			isa = PBXGroup;
+			children = (
+				D711BDA0248501C00099EB69 /* Model */,
+				D711BDA1248501C80099EB69 /* View */,
+				D711BDA2248501DD0099EB69 /* Controller */,
+			);
+			path = Debt;
+			sourceTree = "<group>";
+		};
+		D711BDA0248501C00099EB69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D711BDAB248502A70099EB69 /* DebtModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D711BDA1248501C80099EB69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D711BDA5248502620099EB69 /* ContactView.swift */,
+				D711BDA6248502620099EB69 /* CreateButton.swift */,
+				D711BDA4248502620099EB69 /* DateView.swift */,
+				D711BDA3248502620099EB69 /* DebtViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D711BDA2248501DD0099EB69 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D711BDAD248502DD0099EB69 /* DebtViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,6 +382,7 @@
 				D711BD8F2484FD420099EB69 /* CurrencyCell.xib in Resources */,
 				D711BD56248430F70099EB69 /* LaunchScreen.storyboard in Resources */,
 				D711BD9C2485007F0099EB69 /* DebtCell.xib in Resources */,
+				D711BDA7248502620099EB69 /* DebtViewController.xib in Resources */,
 				D711BD53248430F70099EB69 /* Assets.xcassets in Resources */,
 				D711BD97248500100099EB69 /* DebtsViewController.xib in Resources */,
 				D711BD882484FCE10099EB69 /* CurrenciesViewController.xib in Resources */,
@@ -387,9 +438,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D711BDAE248502DD0099EB69 /* DebtViewController.swift in Sources */,
 				D711BD7A24843EC60099EB69 /* Notifications.swift in Sources */,
+				D711BDA8248502620099EB69 /* DateView.swift in Sources */,
 				D711BD63248437570099EB69 /* Constants.swift in Sources */,
 				D711BD6C248438D50099EB69 /* Date+toString.swift in Sources */,
+				D711BDAC248502A70099EB69 /* DebtModel.swift in Sources */,
 				D711BD8E2484FD420099EB69 /* CurrencyCell.swift in Sources */,
 				D711BD8A2484FCEB0099EB69 /* CurrenciesViewController.swift in Sources */,
 				D711BD7624843EC60099EB69 /* UserDataStorage.swift in Sources */,
@@ -402,9 +456,11 @@
 				D711BD952484FFEC0099EB69 /* DebtBook.swift in Sources */,
 				D711BD9B2485007F0099EB69 /* DebtCell.swift in Sources */,
 				D711BD7924843EC60099EB69 /* CoreDataStack.swift in Sources */,
+				D711BDAA248502620099EB69 /* CreateButton.swift in Sources */,
 				D711BD6D248438D50099EB69 /* UIColor+AppColors.swift in Sources */,
 				D711BD652484377D0099EB69 /* DataTypes.swift in Sources */,
 				D711BD49248430F50099EB69 /* SceneDelegate.swift in Sources */,
+				D711BDA9248502620099EB69 /* ContactView.swift in Sources */,
 				D711BD6E248438D50099EB69 /* UIViewController+dismissKeyboard.swift in Sources */,
 				D711BD51248430F50099EB69 /* Daivdolg.xcdatamodeld in Sources */,
 				D711BD7824843EC60099EB69 /* APIRequestFetcher.swift in Sources */,
