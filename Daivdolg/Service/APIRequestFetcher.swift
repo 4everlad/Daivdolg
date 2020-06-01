@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 
-
 enum NetworkError: Error {
     case badURL
     case decodingError

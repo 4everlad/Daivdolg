@@ -25,7 +25,6 @@ extension UIFont {
     return .systemFont(ofSize: size, weight: .bold)
   }
 
-
   static let title = UIFont.semiboldAppFont(ofSize: 20)
   
   static let subtitle = UIFont.appFont(ofSize: 17)

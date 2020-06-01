@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D711BD47248430F50099EB69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD46248430F50099EB69 /* AppDelegate.swift */; };
 		D711BD49248430F50099EB69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD48248430F50099EB69 /* SceneDelegate.swift */; };
-		D711BD4B248430F50099EB69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD4A248430F50099EB69 /* ViewController.swift */; };
 		D711BD51248430F50099EB69 /* Daivdolg.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D711BD4F248430F50099EB69 /* Daivdolg.xcdatamodeld */; };
 		D711BD53248430F70099EB69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D711BD52248430F70099EB69 /* Assets.xcassets */; };
 		D711BD56248430F70099EB69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D711BD54248430F70099EB69 /* LaunchScreen.storyboard */; };
@@ -56,7 +55,6 @@
 		D711BD43248430F50099EB69 /* Daivdolg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daivdolg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D711BD46248430F50099EB69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D711BD48248430F50099EB69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D711BD4A248430F50099EB69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D711BD50248430F50099EB69 /* Daivdolg.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Daivdolg.xcdatamodel; sourceTree = "<group>"; };
 		D711BD52248430F70099EB69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D711BD55248430F70099EB69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				D711BDBF248505020099EB69 /* Main */,
 				D711BD46248430F50099EB69 /* AppDelegate.swift */,
 				D711BD48248430F50099EB69 /* SceneDelegate.swift */,
-				D711BD4A248430F50099EB69 /* ViewController.swift */,
 				D711BD52248430F70099EB69 /* Assets.xcassets */,
 				D711BDC22485074C0099EB69 /* currencies.json */,
 				D711BD54248430F70099EB69 /* LaunchScreen.storyboard */,
@@ -400,6 +397,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D711BD5A248430F70099EB69 /* Build configuration list for PBXNativeTarget "Daivdolg" */;
 			buildPhases = (
+				D73F9F68248550AE00DE3087 /* ShellScript */,
 				AFC7BE8491E1BACF149766FF /* [CP] Check Pods Manifest.lock */,
 				D711BD3F248430F50099EB69 /* Sources */,
 				D711BD40248430F50099EB69 /* Frameworks */,
@@ -508,6 +506,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Daivdolg/Pods-Daivdolg-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D73F9F68248550AE00DE3087 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -527,7 +542,6 @@
 				D711BD8A2484FCEB0099EB69 /* CurrenciesViewController.swift in Sources */,
 				D711BD7624843EC60099EB69 /* UserDataStorage.swift in Sources */,
 				D711BD7724843EC60099EB69 /* AuthenticationService.swift in Sources */,
-				D711BD4B248430F50099EB69 /* ViewController.swift in Sources */,
 				D711BD6B248438D50099EB69 /* UIFont+AppFonts.swift in Sources */,
 				D711BD9E248500D60099EB69 /* DebtsViewController.swift in Sources */,
 				D711BD862484FCD30099EB69 /* Currencies.swift in Sources */,
