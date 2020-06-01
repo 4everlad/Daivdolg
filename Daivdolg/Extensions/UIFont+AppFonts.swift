@@ -24,13 +24,9 @@ extension UIFont {
   static func boldAppFont(ofSize size: CGFloat) -> UIFont {
     return .systemFont(ofSize: size, weight: .bold)
   }
-
-
+  
   static let title = UIFont.semiboldAppFont(ofSize: 20)
-  
   static let subtitle = UIFont.appFont(ofSize: 17)
-  
   static let body = UIFont.mediumAppFont(ofSize: 17)
-  
   static let subtitleBody = UIFont.appFont(ofSize: 14)
 }

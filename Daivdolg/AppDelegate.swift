@@ -13,7 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var coreDataStack = CoreDataStack() // почему это здесь?
-  let notifications = Notifications()
+  let notifications = Notifications.shared
   
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

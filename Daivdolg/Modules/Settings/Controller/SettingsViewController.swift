@@ -15,16 +15,15 @@ class SettingsViewController: UIViewController {
   @IBOutlet private weak var authenticationSwitch: UISwitch!
   @IBOutlet private weak var notificationsSwitch: UISwitch!
   
-  private let userDataStorage = UserDataStorage()
-  private let authenticationService = AuthenticationService()
-  private let notifications = Notifications()
+  private let userDataStorage = UserDataStorage.shared
+  private let authenticationService = AuthenticationService.shared
+  private let notifications = Notifications.shared
   private var state = AuthenticationState.loggedOut
   
   // MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationItem.title = Constants.Texts.Settings.title
-    // дубликат
     if userDataStorage.isAuthenticationRequired {
       authenticationSwitch.isOn = true
     } else {

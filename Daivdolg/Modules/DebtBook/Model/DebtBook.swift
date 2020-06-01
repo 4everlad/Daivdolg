@@ -12,14 +12,14 @@ class DebtBook {
   
   // MARK: - Properties
   var storageManager = StorageManager.shared
-  private let userDataStorage: UserDataStorage
-  private let notifications: Notifications
-  private let nc = NotificationCenter.default
+  private let userDataStorage = UserDataStorage.shared
+  private let notifications = Notifications.shared
+  private let notificationCenter = NotificationCenter.default
   
   private var debts: [DebtModel] = []
   private var filteredDebts: [DebtModel] = [] {
     didSet {
-        nc.post(name: Notification.Name("updateView"), object: nil)
+        notificationCenter.post(name: Notification.Name("updateView"), object: nil)
     }
   }
   
@@ -33,8 +33,6 @@ class DebtBook {
   
   // MARK: - Init
   init() {
-    self.userDataStorage = UserDataStorage()
-    self.notifications = Notifications()
     getAllDebts()
     getLendDebts()
     let isNotificationsRequired = userDataStorage.isNotificationsRequired
@@ -61,10 +59,6 @@ class DebtBook {
   }
   
   func addDebt(debt: DebtModel) {
-    // для этого проекта норм писать сразу в CoreData
-    // но если данных много и они часто обновляются,
-    // то лучше в coredata записывать при сворачивании/закрытии/креше аппа
-    // потому что она не очень быстрая 
     storageManager.saveDebt(debt: debt)
     debts.append(debt)
     switch debt.type {
@@ -117,11 +111,11 @@ class DebtBook {
       } else if debt.type == .borrow {
         type = Constants.Texts.Debt.borrow
       }
-        // можно все в один guard let засунить
-      guard let name = debt.name else { return }
-      guard let amount = debt.amount else { return }
-      guard let currency = debt.currency else { return }
-      guard let date = debt.returnDate else { return }
+        
+      guard let name = debt.name,
+        let amount = debt.amount,
+        let currency = debt.currency,
+        let date = debt.returnDate else { return }
       notifications.scheduleNotification(notificationType: type,
                                          name: name,
                                          amount: String(amount),

@@ -9,12 +9,9 @@
 import UIKit
 import UserNotifications
 
-// несколько раз создаются объекты этого типа, все объекты будут одинаковые
-// либо сделать поля/методы статическими
-// либо singleton
-
 class Notifications: NSObject, UNUserNotificationCenterDelegate {
   
+  static let shared = Notifications()
   let notificationCenter = UNUserNotificationCenter.current()
   
   func requestAutorization() {
