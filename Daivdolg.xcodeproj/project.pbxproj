@@ -419,7 +419,7 @@
 		D711BD3B248430F50099EB69 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Dmitry Bakulin";
 				TargetAttributes = {
