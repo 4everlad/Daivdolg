@@ -15,6 +15,7 @@ enum AuthenticationState {
 
 class AuthenticationService {
   
+  static let shared = AuthenticationService()
   var state = AuthenticationState.loggedOut
   
   func getAuthenticated(method: @escaping MethodHandler) {
@@ -41,4 +42,6 @@ class AuthenticationService {
       }
     }
   }
+  
+  
 }

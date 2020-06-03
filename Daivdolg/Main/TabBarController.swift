@@ -12,8 +12,9 @@ import LocalAuthentication
 class TabBarController: UITabBarController {
   
   // MARK: - Properties
-  private let userDataStorage = UserDataStorage()
-  private let authenticationService = AuthenticationService()
+  private let userDataStorage = UserDataStorage.shared
+  private let authenticationService = AuthenticationService.shared
+  
   
   // MARK: - Life cycle
   override func viewDidLoad() {

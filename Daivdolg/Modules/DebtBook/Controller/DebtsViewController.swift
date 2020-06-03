@@ -143,6 +143,7 @@ extension DebtsViewController: UITableViewDelegate, UITableViewDataSource {
 extension DebtsViewController: DebtViewControllerDelegate {
   func addDebt(debt: DebtModel) {
     debtBook.addDebt(debt: debt)
+    //switch debt.type
     if debt.type == .lend {
       debtTypeControl.selectedSegmentIndex = 0
     } else if debt.type == .borrow {

@@ -79,12 +79,12 @@ class DebtViewController: UIViewController {
   }
   
   private func configureDebtView() {
-    if debtStatus == .new {
+    switch debtStatus {
+    case .new:
       createButton.isEnabled = false
       lendDebtButton.isEnabled = false
       borrowDebtButton.isEnabled = true
-    }
-    if debtStatus == .exist {
+    case .exist:
       fillExistedDebt()
       createButton.isEnabled = true
       createButton.setTitle("Изменить", for: .normal)

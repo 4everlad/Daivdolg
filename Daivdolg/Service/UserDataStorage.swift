@@ -10,6 +10,7 @@ import Foundation
 
 class UserDataStorage {
   
+  static let shared = UserDataStorage()
   private let userDefaults: UserDefaults
   
   struct UserDefaultsKeys {

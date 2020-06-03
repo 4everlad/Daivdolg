@@ -15,9 +15,9 @@ class SettingsViewController: UIViewController {
   @IBOutlet private weak var authenticationSwitch: UISwitch!
   @IBOutlet private weak var notificationsSwitch: UISwitch!
   
-  private let userDataStorage = UserDataStorage()
-  private let authenticationService = AuthenticationService()
-  private let notifications = Notifications()
+  private let userDataStorage = UserDataStorage.shared
+  private let authenticationService = AuthenticationService.shared
+  private let notifications = Notifications.shared
   private var state = AuthenticationState.loggedOut
   
   // MARK: - Life cycle
@@ -47,7 +47,7 @@ class SettingsViewController: UIViewController {
     if notificationsSwitch.isOn {
       notifications.requestAutorization()
       userDataStorage.isNotificationsRequired = true
-    } else if !notificationsSwitch.isOn {
+    } else if !notificationsSwitch.isOn { // ненужное условие!!!
       userDataStorage.isNotificationsRequired = false
     }
   }
@@ -57,7 +57,7 @@ class SettingsViewController: UIViewController {
     if self.authenticationSwitch.isOn {
       userDataStorage.isAuthenticationRequired = true
       state = .loggedIn
-    } else if !self.authenticationSwitch.isOn {
+    } else if !self.authenticationSwitch.isOn { // ненужное условие!!!
       userDataStorage.isAuthenticationRequired = false
       state = .loggedOut
     }

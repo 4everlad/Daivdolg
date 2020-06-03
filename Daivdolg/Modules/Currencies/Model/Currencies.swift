@@ -21,6 +21,7 @@ struct Currency {
 
 class Currencies {
   
+  // MARK: - properties
   var requestFetcher = APIRequestFetcher.shared
   
   private var currencies: [Currency] = []
@@ -28,12 +29,10 @@ class Currencies {
   
   // MARK: - Init
   init() {
-    let queue = DispatchQueue.global(qos: .utility)
-    queue.async {
-      self.getCurrencies()
-    }
+    self.getCurrencies()
   }
   
+  // MARK: - External methods
   func filterCurrencies(searchText: String) {
     filteredCurrencies = currencies.filter { (currency: Currency) -> Bool in
       return (currency.code.lowercased().contains(searchText.lowercased()) ||
@@ -88,7 +87,7 @@ class Currencies {
     do {
       let decoder = JSONDecoder()
       let currencies = try decoder.decode([String: String].self, from: data)
-      self.currencies = currencies.map({ Currency(code: $0.key, name: $0.value) })
+        self.currencies = currencies.map({ Currency(code: $0.key, name: $0.value) })
     } catch {
       return
     }

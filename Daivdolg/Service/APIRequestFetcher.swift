@@ -20,18 +20,22 @@ class APIRequestFetcher {
   private let url = "http://openexchangerates.org/api/currencies.json"
   
   func fetchRequest(completionHandler: @escaping (Result<[Currency], NetworkError>) -> Void) {
-    AF.request(url).validate().responseJSON { response in
-      do {
-        let decoder = JSONDecoder()
-        guard let data = response.data else {
-          completionHandler(.failure(.decodingError))
-          return }
-        let currenciesDictionary = try decoder.decode([String: String].self, from: data)
-        let currencies = currenciesDictionary.map({ Currency(code: $0.key, name: $0.value) })
-        completionHandler(.success(currencies))
-      } catch {
-        completionHandler(.failure(.badURL))
+    let queue = DispatchQueue.global(qos: .utility)
+    queue.async {
+      AF.request(self.url).validate().responseJSON { response in
+        do {
+          let decoder = JSONDecoder()
+          guard let data = response.data else {
+            completionHandler(.failure(.decodingError))
+            return }
+          let currenciesDictionary = try decoder.decode([String: String].self, from: data)
+          let currencies = currenciesDictionary.map({ Currency(code: $0.key, name: $0.value) })
+          completionHandler(.success(currencies))
+        } catch {
+          completionHandler(.failure(.badURL))
+        }
       }
     }
+    
   }
 }
