@@ -59,7 +59,7 @@ class CurrenciesViewController: UIViewController {
     searchController.isActive = true
     searchController.searchResultsUpdater = self
     searchController.obscuresBackgroundDuringPresentation = false
-    searchController.searchBar.placeholder = "Код или название валюты"
+    searchController.searchBar.placeholder = Constants.Texts.Currencies.searchBarTitle
     navigationItem.searchController = searchController
     navigationItem.hidesSearchBarWhenScrolling = false
     definesPresentationContext = true

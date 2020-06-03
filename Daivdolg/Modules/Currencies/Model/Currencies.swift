@@ -69,10 +69,14 @@ class Currencies {
     requestFetcher.fetchRequest(completionHandler: { result in
       switch result {
       case .success(let currencies):
-        self.currencies = currencies
+        DispatchQueue.main.async {
+          self.currencies = currencies
+        }
       case .failure(let error):
         print(error.localizedDescription)
-        self.getOfflineCurrencies()
+        DispatchQueue.main.async {
+          self.getOfflineCurrencies()
+        }
       }
     })
   }

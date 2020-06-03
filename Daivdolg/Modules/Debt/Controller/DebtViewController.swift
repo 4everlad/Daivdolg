@@ -62,8 +62,8 @@ class DebtViewController: UIViewController {
   // MARK: - Configure
   private func configureContactView() {
     contactView.image = UIImage(named: "contactIcon")
-    contactView.title = "Выбрать контакт"
-    contactView.subtitle = "Нажмите, чтобы выбрать контакт"
+    contactView.title = Constants.Texts.Debt.contactViewTitle
+    contactView.subtitle = Constants.Texts.Debt.contactViewSubtitle
     contactButton.addTarget(self, action: #selector(addPhoneContact(_:)), for: .touchUpInside)
     contactView.onDidSelect = { [unowned self] in
       self.contactButton.sendActions(for: .touchUpInside)
@@ -74,7 +74,7 @@ class DebtViewController: UIViewController {
     sumTextField.delegate = self
     sumTextField.keyboardType = UIKeyboardType.decimalPad
     self.hideKeyboardWhenTappedAround()
-    sumTextField.attributedPlaceholder = NSAttributedString(string: "Выберите сумму",
+    sumTextField.attributedPlaceholder = NSAttributedString(string: Constants.Texts.Debt.sumTextField,
     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
   }
   
@@ -87,7 +87,7 @@ class DebtViewController: UIViewController {
     case .exist:
       fillExistedDebt()
       createButton.isEnabled = true
-      createButton.setTitle("Изменить", for: .normal)
+      createButton.setTitle(Constants.Texts.Debt.createButtonChange, for: .normal)
     }
   }
   
@@ -97,7 +97,7 @@ class DebtViewController: UIViewController {
   }
   
   private func configureDateView() {
-    dateView.title = "Выберите дату"
+    dateView.title = Constants.Texts.Debt.dateViewTitle
     dateView.onDidSelect = { [unowned self] in
       self.debtCalendarTapped()
     }
@@ -126,8 +126,8 @@ class DebtViewController: UIViewController {
   }
   
   @IBAction private func nameManuallyTapped(_ sender: Any) {
-    let alert = UIAlertController(title: "Введите имя",
-                                  message: "Имя будет привязано к контакту",
+    let alert = UIAlertController(title: Constants.Texts.Debt.alertTitle,
+                                  message: Constants.Texts.Debt.alertMessage,
                                   preferredStyle: .alert)
     alert.addTextField { (textField) in
       textField.text = ""
@@ -135,7 +135,7 @@ class DebtViewController: UIViewController {
     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
       let textField = alert?.textFields![0]
       guard let name = textField?.text else { return }
-      self.debt.setContactName(name: name)
+      self.debt.name = name
       self.contactView.title = name
       self.updateCreateButton()
     }))
@@ -235,7 +235,7 @@ extension DebtViewController: DebtCalendarViewControllerDelegate {
   func setReturnDate(date: Date) {
     debt.returnDate = date
     guard let returnDate = debt.returnDate else { return }
-    dateView.title = returnDate.toString()
+    dateView.title = returnDate.toStringFull()
   }
 }
 

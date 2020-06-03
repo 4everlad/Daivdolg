@@ -16,10 +16,6 @@ class DebtModel {
   var returnDate: Date?
   var creationDate: Date
   
-  func setContactName(name: String) {
-    self.name = name
-  }
-  
   func isDebtReadyToCreate() -> Bool {
     if name != nil && amount != nil {
       return true
