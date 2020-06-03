@@ -69,7 +69,6 @@ extension DebtCalendarViewController: FSCalendarDataSource, FSCalendarDelegate {
   }
   
   func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-    // guard let else
     if date .compare(Date()) == .orderedAscending {
       return false
     } else {
@@ -78,7 +77,6 @@ extension DebtCalendarViewController: FSCalendarDataSource, FSCalendarDelegate {
   }
   
   func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-    //разделяй пустыми строками смысловые части, чтобы легче было читать
     guard let returnDate = returnDate else { return 0 }
     let dateString = date.toString()
     let returnDateString = returnDate.toString()

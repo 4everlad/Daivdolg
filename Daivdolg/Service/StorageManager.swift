@@ -13,8 +13,8 @@ import CoreData
 class StorageManager {
   
   private var context: NSManagedObjectContext!
-  private weak var appDelegate: AppDelegate!
   static let shared = StorageManager()
+  var coreDataStack: CoreDataStack
 
   func loadDebts() -> [Debt]? {
     var debts = [Debt]()
@@ -95,9 +95,8 @@ class StorageManager {
   }
 
   init() {
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-    self.appDelegate = appDelegate
-    context = appDelegate.coreDataStack.persistentContainer.viewContext
+    self.coreDataStack = CoreDataStack()
+    context = coreDataStack.persistentContainer.viewContext
   }
 
 }

@@ -79,13 +79,12 @@ class DebtViewController: UIViewController {
   }
   
   private func configureDebtView() {
-    //switch debtStatus { case .new: ... }
-    if debtStatus == .new {
+    switch debtStatus {
+    case .new:
       createButton.isEnabled = false
       lendDebtButton.isEnabled = false
       borrowDebtButton.isEnabled = true
-    }
-    if debtStatus == .exist {
+    case .exist:
       fillExistedDebt()
       createButton.isEnabled = true
       createButton.setTitle("Изменить", for: .normal)
@@ -248,5 +247,3 @@ extension DebtViewController: CurrenciesViewControllerDelegate {
   }
   
 }
-
-// private extension DebtViewController { все приватные методы}
