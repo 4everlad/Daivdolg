@@ -46,8 +46,19 @@
 		D711BDBE248504D50099EB69 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D711BDBD248504D50099EB69 /* SettingsViewController.xib */; };
 		D711BDC1248505340099EB69 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BDC0248505340099EB69 /* TabBarController.swift */; };
 		D711BDC32485074C0099EB69 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = D711BDC22485074C0099EB69 /* currencies.json */; };
+		D715343D2488819200633C69 /* DaivdolgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D715343C2488819200633C69 /* DaivdolgTests.swift */; };
 		E0BE0542B10C025176903C1A /* Pods_Daivdolg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D911F1BCD3C27EF3364AA5 /* Pods_Daivdolg.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D715343F2488819200633C69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D711BD3B248430F50099EB69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D711BD42248430F50099EB69;
+			remoteInfo = Daivdolg;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0EBFB6CD46BB0AECF0ACDF3E /* Pods-Daivdolg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daivdolg.debug.xcconfig"; path = "Target Support Files/Pods-Daivdolg/Pods-Daivdolg.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +104,9 @@
 		D711BDBD248504D50099EB69 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		D711BDC0248505340099EB69 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D711BDC22485074C0099EB69 /* currencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
+		D715343A2488819200633C69 /* DaivdolgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaivdolgTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D715343C2488819200633C69 /* DaivdolgTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaivdolgTests.swift; sourceTree = "<group>"; };
+		D715343E2488819200633C69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F78C0F06A8A2EE0C5C402620 /* Pods-Daivdolg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daivdolg.release.xcconfig"; path = "Target Support Files/Pods-Daivdolg/Pods-Daivdolg.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +116,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0BE0542B10C025176903C1A /* Pods_Daivdolg.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D71534372488819200633C69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				D711BD45248430F50099EB69 /* Daivdolg */,
+				D715343B2488819200633C69 /* DaivdolgTests */,
 				D711BD44248430F50099EB69 /* Products */,
 				569FB9084B9804A6B1A51A9D /* Pods */,
 				08DBAF87D081AA89ED61447C /* Frameworks */,
@@ -139,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				D711BD43248430F50099EB69 /* Daivdolg.app */,
+				D715343A2488819200633C69 /* DaivdolgTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -390,6 +413,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		D715343B2488819200633C69 /* DaivdolgTests */ = {
+			isa = PBXGroup;
+			children = (
+				D715343C2488819200633C69 /* DaivdolgTests.swift */,
+				D715343E2488819200633C69 /* Info.plist */,
+			);
+			path = DaivdolgTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -413,6 +445,24 @@
 			productReference = D711BD43248430F50099EB69 /* Daivdolg.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D71534392488819200633C69 /* DaivdolgTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D71534432488819200633C69 /* Build configuration list for PBXNativeTarget "DaivdolgTests" */;
+			buildPhases = (
+				D71534362488819200633C69 /* Sources */,
+				D71534372488819200633C69 /* Frameworks */,
+				D71534382488819200633C69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D71534402488819200633C69 /* PBXTargetDependency */,
+			);
+			name = DaivdolgTests;
+			productName = DaivdolgTests;
+			productReference = D715343A2488819200633C69 /* DaivdolgTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -425,6 +475,10 @@
 				TargetAttributes = {
 					D711BD42248430F50099EB69 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					D71534392488819200633C69 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = D711BD42248430F50099EB69;
 					};
 				};
 			};
@@ -442,6 +496,7 @@
 			projectRoot = "";
 			targets = (
 				D711BD42248430F50099EB69 /* Daivdolg */,
+				D71534392488819200633C69 /* DaivdolgTests */,
 			);
 		};
 /* End PBXProject section */
@@ -461,6 +516,13 @@
 				D711BD882484FCE10099EB69 /* CurrenciesViewController.xib in Resources */,
 				D711BDC32485074C0099EB69 /* currencies.json in Resources */,
 				D711BDB4248503DA0099EB69 /* DebtCalendarViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D71534382488819200633C69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,7 +624,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D71534362488819200633C69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D715343D2488819200633C69 /* DaivdolgTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D71534402488819200633C69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D711BD42248430F50099EB69 /* Daivdolg */;
+			targetProxy = D715343F2488819200633C69 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D711BD54248430F70099EB69 /* LaunchScreen.storyboard */ = {
@@ -728,6 +806,48 @@
 			};
 			name = Release;
 		};
+		D71534412488819200633C69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3JC9RT8Q8;
+				INFOPLIST_FILE = DaivdolgTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmitrybakulin.DaivdolgTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daivdolg.app/Daivdolg";
+			};
+			name = Debug;
+		};
+		D71534422488819200633C69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3JC9RT8Q8;
+				INFOPLIST_FILE = DaivdolgTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmitrybakulin.DaivdolgTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daivdolg.app/Daivdolg";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -745,6 +865,15 @@
 			buildConfigurations = (
 				D711BD5B248430F70099EB69 /* Debug */,
 				D711BD5C248430F70099EB69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D71534432488819200633C69 /* Build configuration list for PBXNativeTarget "DaivdolgTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D71534412488819200633C69 /* Debug */,
+				D71534422488819200633C69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

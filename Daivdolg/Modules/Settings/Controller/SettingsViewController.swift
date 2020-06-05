@@ -36,6 +36,14 @@ class SettingsViewController: UIViewController {
     }
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+  }
+  
   // MARK: - Actions
   @IBAction private func localAuthenticationSwitched(_ sender: Any) {
     authenticationService.getAuthenticated {

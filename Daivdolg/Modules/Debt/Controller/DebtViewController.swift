@@ -27,7 +27,7 @@ class DebtViewController: UIViewController {
   @IBOutlet private weak var lendDebtButton: CreateButton!
   @IBOutlet private weak var borrowDebtButton: CreateButton!
   @IBOutlet private weak var sumTextField: UITextField!
-  @IBOutlet private weak var currencyButton: UIButton!
+  @IBOutlet private weak var currencyButton: UIButton?
   @IBOutlet private weak var dateView: DateView!
   
   private let contactButton = UIButton()
@@ -243,7 +243,9 @@ extension DebtViewController: DebtCalendarViewControllerDelegate {
 extension DebtViewController: CurrenciesViewControllerDelegate {
   func setCurrency(code: String) {
     debt.currency = code
-    currencyButton.setTitle(code, for: .normal)
+    guard let curButton = currencyButton else {return }
+    curButton.setTitle(code, for: .normal)
+//    currencyButton.setTitle(code, for: .normal)
   }
   
 }
