@@ -22,7 +22,7 @@ class DateView: UIView, DateViewConfiguration {
   // MARK: - Properties
   private let containerView: UIView = {
     let view = UIView()
-    view.backgroundColor = UIColor.white
+    view.backgroundColor = UIColor.systemGray5
     view.layer.cornerRadius = 7
     return view
   }()

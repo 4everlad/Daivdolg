@@ -22,7 +22,7 @@ class ContactView: UIView, ContactViewConfiguration {
   // MARK: - Properties
   private let containerView: UIView = {
     let view = UIView()
-    view.backgroundColor = UIColor.mainGreen
+    view.backgroundColor = UIColor.systemGray5
     view.layer.cornerRadius = 7
     return view
   }()
@@ -32,7 +32,7 @@ class ContactView: UIView, ContactViewConfiguration {
   private let titleLabel: UILabel = {
     let label = UILabel()
     label.font = UIFont.body
-    label.textColor = UIColor.white
+    label.textColor = UIColor.mainGreen
     label.textAlignment = .left
     return label
   }()
@@ -40,7 +40,7 @@ class ContactView: UIView, ContactViewConfiguration {
   private let subtitleLabel: UILabel = {
     let label = UILabel()
     label.font = UIFont.subtitleBody
-    label.textColor = UIColor.yellow
+    label.textColor = UIColor.separatorGrey
     label.textAlignment = .left
     label.numberOfLines = 0
     return label
