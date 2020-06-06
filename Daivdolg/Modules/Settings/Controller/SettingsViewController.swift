@@ -18,7 +18,6 @@ class SettingsViewController: UIViewController {
   private let userDataStorage = UserDataStorage.shared
   private let authenticationService = AuthenticationService.shared
   private let notifications = Notifications.shared
-  private var state = AuthenticationState.loggedOut
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -55,7 +54,7 @@ class SettingsViewController: UIViewController {
     if notificationsSwitch.isOn {
       notifications.requestAutorization()
       userDataStorage.isNotificationsRequired = true
-    } else if !notificationsSwitch.isOn { // ненужное условие!!!
+    } else if !notificationsSwitch.isOn {
       userDataStorage.isNotificationsRequired = false
     }
   }
@@ -64,10 +63,10 @@ class SettingsViewController: UIViewController {
   private func changeAuthSetting() {
     if self.authenticationSwitch.isOn {
       userDataStorage.isAuthenticationRequired = true
-      state = .loggedIn
-    } else if !self.authenticationSwitch.isOn { // ненужное условие!!!
+      authenticationService.state = .loggedOut
+    } else if !self.authenticationSwitch.isOn {
       userDataStorage.isAuthenticationRequired = false
-      state = .loggedOut
+      authenticationService.state = .loggedOut
     }
   }
   
