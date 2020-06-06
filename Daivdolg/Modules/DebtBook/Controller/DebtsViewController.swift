@@ -34,19 +34,19 @@ class DebtsViewController: UIViewController {
     }
   
   // MARK: - Configure
-  func configureTableView() {
+  private func configureTableView() {
     tableView.dataSource = self
     tableView.delegate = self
     tableView.register(UINib(nibName: "DebtCell", bundle: nil), forCellReuseIdentifier: "DebtCell")
   }
   
-  func configureAddButton() {
+  private func configureAddButton() {
     let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped(_:)))
     rightButton.tintColor = UIColor.mainGreen
     navigationItem.rightBarButtonItem = rightButton
   }
   
-  func configureDebtTypeControl() {
+  private func configureDebtTypeControl() {
     let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     debtTypeControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
   }
@@ -143,6 +143,12 @@ extension DebtsViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - DebtViewControllerDelegate
 extension DebtsViewController: DebtViewControllerDelegate {
+  
+  func changeCurrentDebtType(debt: DebtModel) {
+    debtBook.currentDebtType = debt.type
+    debtTypeChanged(self)
+  }
+  
   func addDebt(debt: DebtModel) {
     debtBook.addDebt(debt: debt)
     //switch debt.type

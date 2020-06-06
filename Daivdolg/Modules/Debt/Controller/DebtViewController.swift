@@ -17,6 +17,7 @@ enum DebtStatus {
 protocol DebtViewControllerDelegate: class {
   func addDebt(debt: DebtModel)
   func changeDebt(debt: DebtModel)
+  func changeCurrentDebtType(debt: DebtModel)
 }
 
 class DebtViewController: UIViewController {
@@ -186,7 +187,7 @@ class DebtViewController: UIViewController {
     } else if debtStatus == .exist {
       delegate?.changeDebt(debt: debt)
     }
-    
+    delegate?.changeCurrentDebtType(debt: debt)
     dismiss(animated: true, completion: nil)
   }
   
