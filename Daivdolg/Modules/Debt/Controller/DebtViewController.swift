@@ -24,10 +24,10 @@ class DebtViewController: UIViewController {
   // MARK: - Properties
   @IBOutlet private weak var contactView: ContactView!
   @IBOutlet private weak var createButton: CreateButton!
-  @IBOutlet private weak var lendDebtButton: CreateButton!
-  @IBOutlet private weak var borrowDebtButton: CreateButton!
+  @IBOutlet private weak var lendDebtButton: ChoiseButton!
+  @IBOutlet private weak var borrowDebtButton: ChoiseButton!
   @IBOutlet private weak var sumTextField: UITextField!
-  @IBOutlet private weak var currencyButton: UIButton?
+  @IBOutlet private weak var currencyButton: UIButton!
   @IBOutlet private weak var dateView: DateView!
   
   private let contactButton = UIButton()
@@ -53,6 +53,8 @@ class DebtViewController: UIViewController {
     super.viewDidLoad()
     navigationItem.title = Constants.Texts.Debt.newTitle
     configureCloseButton()
+    configureLendDebtButton()
+    configureLendBorrowButton()
     configureContactView()
     configureSumTextField()
     configureDateView()
@@ -89,6 +91,14 @@ class DebtViewController: UIViewController {
       createButton.isEnabled = true
       createButton.setTitle(Constants.Texts.Debt.createButtonChange, for: .normal)
     }
+  }
+  
+  private func configureLendDebtButton() {
+    lendDebtButton.layer.borderColor = UIColor.mainGreen.cgColor
+  }
+  
+  private func configureLendBorrowButton() {
+    borrowDebtButton.layer.borderColor = UIColor.mainGreen.cgColor
   }
   
   private func configureCloseButton() {
@@ -243,9 +253,7 @@ extension DebtViewController: DebtCalendarViewControllerDelegate {
 extension DebtViewController: CurrenciesViewControllerDelegate {
   func setCurrency(code: String) {
     debt.currency = code
-    guard let curButton = currencyButton else {return }
-    curButton.setTitle(code, for: .normal)
-//    currencyButton.setTitle(code, for: .normal)
+    currencyButton.setTitle(code, for: .normal)
   }
   
 }
