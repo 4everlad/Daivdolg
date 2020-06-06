@@ -77,7 +77,7 @@ class DebtViewController: UIViewController {
     sumTextField.keyboardType = UIKeyboardType.decimalPad
     self.hideKeyboardWhenTappedAround()
     sumTextField.attributedPlaceholder = NSAttributedString(string: Constants.Texts.Debt.sumTextField,
-    attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    attributes: [NSAttributedString.Key.foregroundColor: UIColor.mainGreen])
   }
   
   private func configureDebtView() {
@@ -98,7 +98,7 @@ class DebtViewController: UIViewController {
   }
   
   private func configureLendBorrowButton() {
-    borrowDebtButton.layer.borderColor = UIColor.mainGreen.cgColor
+    borrowDebtButton.layer.borderColor = UIColor.debtRed.cgColor
   }
   
   private func configureCloseButton() {

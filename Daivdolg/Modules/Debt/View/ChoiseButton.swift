@@ -23,6 +23,16 @@ class ChoiseButton: UIButton {
       updateBorderWidth()
     }
   }
+  @IBInspectable var enabledTextColor: UIColor? {
+    didSet {
+      updateBorderWidth()
+    }
+  }
+  @IBInspectable var disabledTextColor: UIColor? {
+    didSet {
+      updateBorderWidth()
+    }
+  }
 
   override var isEnabled: Bool {
     didSet {
@@ -39,6 +49,12 @@ class ChoiseButton: UIButton {
   }
   
   private func updateBorderWidth() {
-    layer.borderWidth = isEnabled ? enabledBorderWidth : disabledBorderWidth
+    if isEnabled {
+      layer.borderWidth = enabledBorderWidth
+      self.setTitleColor(enabledTextColor, for: .normal)
+    } else {
+      layer.borderWidth = disabledBorderWidth
+      self.setTitleColor(disabledTextColor, for: .disabled)
+    }
   }
 }
