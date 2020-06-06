@@ -79,8 +79,6 @@ class DebtBook {
     case .borrow:
       let debtModel = DebtModel(type: .borrow)
       return debtModel
-    default:
-      break
     }
   }
   

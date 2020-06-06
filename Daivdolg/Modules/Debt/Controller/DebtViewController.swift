@@ -84,8 +84,13 @@ class DebtViewController: UIViewController {
     switch debtStatus {
     case .new:
       createButton.isEnabled = false
-      lendDebtButton.isEnabled = false
-      borrowDebtButton.isEnabled = true
+      if debt.type == .lend {
+        lendDebtButton.isEnabled = false
+        borrowDebtButton.isEnabled = true
+      } else if debt.type == .borrow {
+        lendDebtButton.isEnabled = true
+        borrowDebtButton.isEnabled = false
+      }
     case .exist:
       fillExistedDebt()
       createButton.isEnabled = true
