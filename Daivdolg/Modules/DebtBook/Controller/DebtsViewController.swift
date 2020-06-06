@@ -57,9 +57,11 @@ class DebtsViewController: UIViewController {
     case 0:
       debtTypeControl.selectedSegmentTintColor = UIColor.mainGreen
       debtBook.getLendDebts()
+      debtBook.currentDebtType = .lend
     case 1:
       debtTypeControl.selectedSegmentTintColor = UIColor.debtRed
       debtBook.getBorrowDebts()
+      debtBook.currentDebtType = .borrow
     default:
       break
     }
@@ -67,7 +69,7 @@ class DebtsViewController: UIViewController {
   }
   
   @objc private func addTapped(_ sender: UIButton) {
-    let debt = DebtModel()
+    let debt = debtBook.getNewDebt()
     let debtViewController = DebtViewController(debt: debt, debtStatus: .new)
     debtViewController.delegate = self
     let debtNavigationController = UINavigationController(rootViewController: debtViewController)

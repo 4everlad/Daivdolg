@@ -145,8 +145,13 @@ class DebtViewController: UIViewController {
     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
       let textField = alert?.textFields![0]
       guard let name = textField?.text else { return }
-      self.debt.name = name
-      self.contactView.title = name
+      if name != "" {
+        self.debt.name = name
+        self.contactView.title = name
+      } else {
+        self.debt.name = nil
+        self.contactView.title = Constants.Texts.Debt.contactViewTitle
+      }
       self.updateCreateButton()
     }))
     self.present(alert, animated: true, completion: nil)

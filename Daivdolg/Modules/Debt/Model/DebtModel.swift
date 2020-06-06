@@ -23,6 +23,12 @@ class DebtModel {
     return false
   }
   
+  init(type: DebtType) {
+    self.type = type
+    self.creationDate = Date()
+    self.currency = "RUB"
+  }
+  
   init() {
     self.type = .lend
     self.creationDate = Date()

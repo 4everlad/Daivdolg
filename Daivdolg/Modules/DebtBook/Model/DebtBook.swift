@@ -23,6 +23,8 @@ class DebtBook {
     }
   }
   
+  var currentDebtType: DebtType = .lend
+  
   var isNoDebts: Bool {
     if filteredDebts.isEmpty {
       return true
@@ -66,6 +68,19 @@ class DebtBook {
       getLendDebts()
     case .borrow:
       getBorrowDebts()
+    }
+  }
+  
+  func getNewDebt() -> DebtModel {
+    switch currentDebtType {
+    case .lend:
+      let debtModel = DebtModel(type: .lend)
+      return debtModel
+    case .borrow:
+      let debtModel = DebtModel(type: .borrow)
+      return debtModel
+    default:
+      break
     }
   }
   
