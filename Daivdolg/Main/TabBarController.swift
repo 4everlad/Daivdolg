@@ -13,8 +13,8 @@ class TabBarController: UITabBarController {
   
   // MARK: - Properties
   private let userDataStorage = UserDataStorage.shared
-  private let authenticationService = AuthenticationService.shared
-    
+  private let authenticationService = AuthenticationService()
+
   // MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()

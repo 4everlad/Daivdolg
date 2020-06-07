@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="c0e-gU-0Un">
-                    <rect key="frame" x="16" y="26" width="343" height="111"/>
+                    <rect key="frame" x="16" y="16" width="343" height="111"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KN3-by-3cC">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
@@ -31,7 +31,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24i-rO-Ygd">
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="24i-rO-Ygd">
                                     <rect key="frame" x="294" y="9.5" width="51" height="31"/>
                                     <connections>
                                         <action selector="localAuthenticationSwitched:" destination="-1" eventType="valueChanged" id="lnz-Hm-PLs"/>
@@ -64,7 +64,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9CY-ca-3vz">
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9CY-ca-3vz">
                                     <rect key="frame" x="294" y="9.5" width="51" height="31"/>
                                     <connections>
                                         <action selector="debtsNotificationsSwitched:" destination="-1" eventType="valueChanged" id="cv3-5u-FDM"/>
@@ -90,7 +90,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="c0e-gU-0Un" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="26" id="6V2-Kc-d2G"/>
+                <constraint firstItem="c0e-gU-0Un" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="6V2-Kc-d2G"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c0e-gU-0Un" secondAttribute="trailing" constant="16" id="YCg-cv-OoJ"/>
                 <constraint firstItem="c0e-gU-0Un" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="rPJ-0z-dCD"/>
             </constraints>

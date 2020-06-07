@@ -15,8 +15,8 @@ class SettingsViewController: UIViewController {
   @IBOutlet private weak var authenticationSwitch: UISwitch!
   @IBOutlet private weak var notificationsSwitch: UISwitch!
   
+  private let authenticationService = AuthenticationService()
   private let userDataStorage = UserDataStorage.shared
-  private let authenticationService = AuthenticationService.shared
   private let notifications = Notifications.shared
   
   // MARK: - Life cycle
