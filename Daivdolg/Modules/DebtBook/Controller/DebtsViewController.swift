@@ -151,10 +151,10 @@ extension DebtsViewController: DebtViewControllerDelegate {
   
   func addDebt(debt: DebtModel) {
     debtBook.addDebt(debt: debt)
-    //switch debt.type
-    if debt.type == .lend {
+    switch debt.type {
+    case .lend:
       debtTypeControl.selectedSegmentIndex = 0
-    } else if debt.type == .borrow {
+    case .borrow:
       debtTypeControl.selectedSegmentIndex = 1
     }
     tableView.reloadData()
@@ -162,9 +162,10 @@ extension DebtsViewController: DebtViewControllerDelegate {
   
   func changeDebt(debt: DebtModel) {
     debtBook.changeDebt(debt: debt)
-    if debt.type == .lend {
+    switch debt.type {
+    case .lend:
       debtTypeControl.selectedSegmentIndex = 0
-    } else if debt.type == .borrow {
+    case .borrow:
       debtTypeControl.selectedSegmentIndex = 1
     }
     tableView.reloadData()
