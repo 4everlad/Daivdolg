@@ -27,7 +27,7 @@ class DebtViewController: UIViewController {
   @IBOutlet private weak var createButton: CreateButton!
   @IBOutlet private weak var lendDebtButton: ChoiseButton!
   @IBOutlet private weak var borrowDebtButton: ChoiseButton!
-  @IBOutlet private weak var sumTextField: UITextField!
+  @IBOutlet private weak var sumTextField: TextField!
   @IBOutlet private weak var currencyButton: UIButton!
   @IBOutlet private weak var dateView: DateView!
   
@@ -79,6 +79,8 @@ class DebtViewController: UIViewController {
     self.hideKeyboardWhenTappedAround()
     sumTextField.attributedPlaceholder = NSAttributedString(string: Constants.Texts.Debt.sumTextField,
     attributes: [NSAttributedString.Key.foregroundColor: UIColor.mainGreen])
+    sumTextField.layer.borderWidth = 0.0
+    sumTextField.layer.borderColor = UIColor.clear.cgColor
   }
   
   private func configureDebtView() {
