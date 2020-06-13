@@ -225,6 +225,9 @@ class DebtViewController: UIViewController {
     if let amount = debt.amount {
       sumTextField.text = String(amount)
     }
+    if let currency = debt.currency {
+      currencyButton.setTitle(currency, for: .normal)
+    }
     if let name = debt.name {
       contactView.title = name
     }
