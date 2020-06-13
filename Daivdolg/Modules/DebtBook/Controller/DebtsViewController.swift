@@ -21,15 +21,16 @@ class DebtsViewController: UIViewController {
   
   // MARK: - Life cycle
   override func viewDidLoad() {
-      super.viewDidLoad()
-      navigationItem.title = Constants.Texts.Main.title
-      configureTableView()
-      configureAddButton()
-      configureDebtTypeControl()
-      updateView()
-      nc.addObserver(self, selector: #selector(updateView), name: Notification.Name("updateView"), object: nil)
-      if let navController = navigationController {
-        navController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.mainGreen]
+    super.viewDidLoad()
+    navigationItem.title = Constants.Texts.Main.title
+    configureTableView()
+    configureAddButton()
+    configureDebtTypeControl()
+    updateView()
+    nc.addObserver(self, selector: #selector(updateView), name: Notification.Name("updateView"), object: nil)
+    if let navController = navigationController {
+      navController.navigationBar.titleTextAttributes =
+        [NSAttributedString.Key.foregroundColor: UIColor.mainGreen]
       }
     }
   
@@ -76,6 +77,9 @@ class DebtsViewController: UIViewController {
     if let navigationController = navigationController {
       navigationController.present(debtNavigationController, animated: true)
     }
+    if let selectedIndexPath = tableView.indexPathForSelectedRow {
+      tableView.deselectRow(at: selectedIndexPath, animated: true)
+    }
   }
   
   @objc private func updateView() {
@@ -87,7 +91,7 @@ class DebtsViewController: UIViewController {
       noDebtsView.isHidden = true
     }
   }
-  
+
 }
 
 // MARK: - UITableView
@@ -125,6 +129,9 @@ extension DebtsViewController: UITableViewDelegate, UITableViewDataSource {
     let debtNavigationController = UINavigationController(rootViewController: debtViewController)
     if let navigationController = navigationController {
       navigationController.present(debtNavigationController, animated: true)
+    }
+    if let selectedIndexPath = tableView.indexPathForSelectedRow {
+      tableView.deselectRow(at: selectedIndexPath, animated: true)
     }
   }
   

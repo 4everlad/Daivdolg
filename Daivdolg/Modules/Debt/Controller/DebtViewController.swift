@@ -229,7 +229,7 @@ class DebtViewController: UIViewController {
       contactView.title = name
     }
     if let returnDate = debt.returnDate {
-      dateView.title = returnDate.toString()
+      dateView.title = returnDate.toStringFull()
     }
   }
 }
