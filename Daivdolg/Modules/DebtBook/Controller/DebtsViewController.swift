@@ -18,6 +18,7 @@ class DebtsViewController: UIViewController {
   
   var debtBook = DebtBook()
   let nc = NotificationCenter.default
+    private let userDataStorage = UserDataStorage.shared
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -59,10 +60,12 @@ class DebtsViewController: UIViewController {
       debtTypeControl.selectedSegmentTintColor = UIColor.mainGreen
       debtBook.getLendDebts()
       debtBook.currentDebtType = .lend
+      userDataStorage.currentDebtType = .lend
     case 1:
       debtTypeControl.selectedSegmentTintColor = UIColor.debtRed
       debtBook.getBorrowDebts()
       debtBook.currentDebtType = .borrow
+      userDataStorage.currentDebtType = .borrow
     default:
       break
     }
@@ -71,7 +74,8 @@ class DebtsViewController: UIViewController {
   
   @objc private func addTapped(_ sender: UIButton) {
     let debt = debtBook.getNewDebt()
-    let debtViewController = DebtViewController(debt: debt, debtStatus: .new)
+    let debtType = debtBook.currentDebtType
+    let debtViewController = DebtViewController(debt: debt, debtType: debtType, debtStatus: .new)
     debtViewController.delegate = self
     let debtNavigationController = UINavigationController(rootViewController: debtViewController)
     if let navigationController = navigationController {
@@ -124,7 +128,8 @@ extension DebtsViewController: UITableViewDelegate, UITableViewDataSource {
                  didSelectRowAt indexPath: IndexPath) {
     let debt: DebtModel
     debt = debtBook.getDebts()[indexPath.row]
-    let debtViewController = DebtViewController(debt: debt, debtStatus: .exist)
+    let debtType = debt.type
+    let debtViewController = DebtViewController(debt: debt, debtType: debtType, debtStatus: .exist)
     debtViewController.delegate = self
     let debtNavigationController = UINavigationController(rootViewController: debtViewController)
     if let navigationController = navigationController {

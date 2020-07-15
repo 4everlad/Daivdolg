@@ -39,8 +39,13 @@ class DebtViewController: UIViewController {
   private let currencies = Currencies()
   
   // MARK: - Init
-  init(debt: DebtModel, debtStatus: DebtStatus) {
-    self.debt = debt
+    init(debt: DebtModel?, debtType: DebtType, debtStatus: DebtStatus) {
+    if let debt = debt {
+        self.debt = debt
+    } else {
+        let debt = DebtModel(type: debtType)
+        self.debt = debt
+    }
     self.debtStatus = debtStatus
     super.init(nibName: nil, bundle: nil)
   }
