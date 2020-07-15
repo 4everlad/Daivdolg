@@ -16,6 +16,7 @@ class UserDataStorage {
   struct UserDefaultsKeys {
     static let isAuthenticationRequired = "isAuthenticationRequired"
     static let isNotificationsRequired = "isNotificationsRequired"
+    static let currentDebtType = "currentDebtType"
   }
   
   required init(userDefaults: UserDefaults = UserDefaults.standard) {
@@ -39,4 +40,16 @@ class UserDataStorage {
       userDefaults.set(newValue, forKey: UserDefaultsKeys.isNotificationsRequired)
     }
   }
+    
+    var currentDebtType: DebtType? {
+        get {
+            guard let debtType = UserDefaults.standard.value(forKey: UserDefaultsKeys.currentDebtType) as? String else {
+                return nil
+            }
+            return DebtType(rawValue: debtType)
+        }
+        set(debtType) {
+            UserDefaults.standard.set(debtType?.rawValue, forKey: UserDefaultsKeys.currentDebtType)
+        }
+    }
 }

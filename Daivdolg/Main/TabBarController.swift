@@ -30,20 +30,20 @@ class TabBarController: UITabBarController {
   
   // MARK: - Private methods
   private func configureViewControllers() {
-    let firstViewController = DebtsViewController()
+    let debtsViewController = DebtsViewController()
     let debtsIcon = UIImage(named: "debtsIcon")
     let debtsIconSelected = UIImage(named: "debtsIconSelected")
-    firstViewController.tabBarItem = UITabBarItem(title: "Долги", image: debtsIcon, tag: 0)
-    firstViewController.tabBarItem.selectedImage = debtsIconSelected?.withRenderingMode(.alwaysOriginal)
+    debtsViewController.tabBarItem = UITabBarItem(title: "Долги", image: debtsIcon, tag: 0)
+    debtsViewController.tabBarItem.selectedImage = debtsIconSelected?.withRenderingMode(.alwaysOriginal)
     
-    let secondViewController = SettingsViewController()
+    let settingsViewController = SettingsViewController()
     let settingsIcon = UIImage(named: "settingsIcon")
     let settingsIconSelected = UIImage(named: "settingsIconSelected")
-    secondViewController.tabBarItem = UITabBarItem(title: "Настройки", image: settingsIcon, tag: 1)
-    secondViewController.tabBarItem.selectedImage = settingsIconSelected?.withRenderingMode(.alwaysOriginal)
+    settingsViewController.tabBarItem = UITabBarItem(title: "Настройки", image: settingsIcon, tag: 2)
+    settingsViewController.tabBarItem.selectedImage = settingsIconSelected?.withRenderingMode(.alwaysOriginal)
     UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.mainGreen], for: .selected)
     
-    let tabBarList = [firstViewController, secondViewController]
+    let tabBarList = [debtsViewController, settingsViewController]
     
     viewControllers = tabBarList.map {
       UINavigationController(rootViewController: $0)
