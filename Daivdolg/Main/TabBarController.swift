@@ -36,6 +36,9 @@ class TabBarController: UITabBarController {
     debtsViewController.tabBarItem = UITabBarItem(title: "Долги", image: debtsIcon, tag: 0)
     debtsViewController.tabBarItem.selectedImage = debtsIconSelected?.withRenderingMode(.alwaysOriginal)
     
+    let debtViewController = DebtViewController(debt: nil, debtType: DebtType.lend, debtStatus: DebtStatus.new)
+    debtViewController.tabBarItem = UITabBarItem(title: "", image: nil, tag: 1)
+    
     let settingsViewController = SettingsViewController()
     let settingsIcon = UIImage(named: "settingsIcon")
     let settingsIconSelected = UIImage(named: "settingsIconSelected")
@@ -43,11 +46,10 @@ class TabBarController: UITabBarController {
     settingsViewController.tabBarItem.selectedImage = settingsIconSelected?.withRenderingMode(.alwaysOriginal)
     UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.mainGreen], for: .selected)
     
-    let tabBarList = [debtsViewController, settingsViewController]
+    let tabBarList = [debtsViewController, debtViewController, settingsViewController]
     
     viewControllers = tabBarList.map {
       UINavigationController(rootViewController: $0)
     }
   }
-  
 }

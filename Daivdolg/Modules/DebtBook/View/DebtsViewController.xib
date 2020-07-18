@@ -21,25 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYu-ul-SlX">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                    <items>
-                        <barButtonItem style="plain" id="1hy-bv-viA">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="X9v-r8-9aC">
-                                <rect key="frame" x="16" y="6" width="343" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="дал в долг"/>
-                                    <segment title="взял в долг"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" red="0.094117647058823528" green="0.65098039215686276" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="debtTypeChanged:" destination="-1" eventType="valueChanged" id="BC4-Al-YJl"/>
-                                </connections>
-                            </segmentedControl>
-                        </barButtonItem>
-                    </items>
-                </toolbar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fca-Tm-SkT">
                     <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
                     <subviews>
@@ -68,27 +49,84 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WIk-Qt-87t">
-                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wn-mJ-C7c" customClass="RoundButton" customModule="Daivdolg" customModuleProvider="target">
+                    <rect key="frame" x="297" y="511" width="62" height="62"/>
+                    <color key="backgroundColor" red="0.094117647060000004" green="0.65098039220000004" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="Xel-bN-Efw"/>
+                        <constraint firstAttribute="height" constant="62" id="lma-U2-jsY"/>
+                    </constraints>
+                    <state key="normal" image="addButtonIcon">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleShadowColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="35"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetHeight">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addDebtTapped:" destination="-1" eventType="touchUpInside" id="Ncr-dy-Hkk"/>
+                    </connections>
+                </button>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYu-ul-SlX">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <items>
+                        <barButtonItem style="plain" id="1hy-bv-viA">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="X9v-r8-9aC">
+                                <rect key="frame" x="16" y="6" width="343" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="дал в долг"/>
+                                    <segment title="взял в долг"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.094117647058823528" green="0.65098039215686276" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="debtTypeChanged:" destination="-1" eventType="valueChanged" id="BC4-Al-YJl"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="fca-Tm-SkT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2PF-66-myB"/>
                 <constraint firstItem="fca-Tm-SkT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="2ez-hL-VvU"/>
-                <constraint firstItem="WIk-Qt-87t" firstAttribute="top" secondItem="bYu-ul-SlX" secondAttribute="bottom" id="5Xa-Sj-2zb"/>
-                <constraint firstItem="bYu-ul-SlX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="B1u-HN-Feh"/>
-                <constraint firstItem="bYu-ul-SlX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Fz1-nn-XAn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WIk-Qt-87t" secondAttribute="bottom" id="Yd6-GP-HEx"/>
+                <constraint firstItem="bYu-ul-SlX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="51g-to-wXd"/>
+                <constraint firstItem="bYu-ul-SlX" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="7Jo-nG-nSk"/>
+                <constraint firstItem="bYu-ul-SlX" firstAttribute="top" secondItem="WIk-Qt-87t" secondAttribute="bottom" id="J3Y-E4-a9M"/>
                 <constraint firstAttribute="trailing" secondItem="WIk-Qt-87t" secondAttribute="trailing" id="dXr-5p-cRE"/>
+                <constraint firstItem="bYu-ul-SlX" firstAttribute="top" secondItem="6Wn-mJ-C7c" secondAttribute="bottom" constant="50" id="gAb-18-fE4"/>
+                <constraint firstItem="bYu-ul-SlX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ouf-l1-dWR"/>
                 <constraint firstItem="WIk-Qt-87t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="syC-Iy-3ep"/>
-                <constraint firstItem="bYu-ul-SlX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="z9d-E5-m0o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6Wn-mJ-C7c" secondAttribute="trailing" constant="16" id="uEs-Bh-Ncm"/>
+                <constraint firstItem="WIk-Qt-87t" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wMQ-ja-pgx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
+            <point key="canvasLocation" x="136.80000000000001" y="123.68815592203899"/>
         </view>
     </objects>
     <resources>
+        <image name="addButtonIcon" width="117" height="117"/>
         <image name="noDebtsIcon" width="458" height="474"/>
     </resources>
 </document>
