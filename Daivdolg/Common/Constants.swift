@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
   struct Texts {
@@ -37,5 +38,8 @@ struct Constants {
     struct Settings {
       static let title = "Настройки"
     }
+  }
+  struct Sizes {
+    static let actionButtonSize = CGSize(width: 64, height: 64)
   }
 }

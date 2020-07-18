@@ -47,6 +47,7 @@
 		D711BDC32485074C0099EB69 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = D711BDC22485074C0099EB69 /* currencies.json */; };
 		D715343D2488819200633C69 /* DaivdolgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D715343C2488819200633C69 /* DaivdolgTests.swift */; };
 		D791C55C248AD17100DB410F /* ChoiseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D791C55B248AD17100DB410F /* ChoiseButton.swift */; };
+		D7A285DC24C3866D004EF954 /* EBRoundedTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A285DB24C3866D004EF954 /* EBRoundedTabBarItem.swift */; };
 		D7C17000248EEFE7001B33DA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C16FFF248EEFE7001B33DA /* TextField.swift */; };
 		D7C17002248EF4BE001B33DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C17001248EF4BE001B33DA /* LaunchScreen.xib */; };
 		D7D6DF5E24C0CB60007EDABE /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6DF5D24C0CB60007EDABE /* RoundButton.swift */; };
@@ -110,6 +111,7 @@
 		D715343C2488819200633C69 /* DaivdolgTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaivdolgTests.swift; sourceTree = "<group>"; };
 		D715343E2488819200633C69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D791C55B248AD17100DB410F /* ChoiseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseButton.swift; sourceTree = "<group>"; };
+		D7A285DB24C3866D004EF954 /* EBRoundedTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBRoundedTabBarItem.swift; sourceTree = "<group>"; };
 		D7C16FFF248EEFE7001B33DA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		D7C17001248EF4BE001B33DA /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		D7D6DF5D24C0CB60007EDABE /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 		D711BDBF248505020099EB69 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D7A285DB24C3866D004EF954 /* EBRoundedTabBarItem.swift */,
 				D711BDC0248505340099EB69 /* TabBarController.swift */,
 			);
 			path = Main;
@@ -608,6 +611,7 @@
 				D711BD63248437570099EB69 /* Constants.swift in Sources */,
 				D711BD6C248438D50099EB69 /* Date+toString.swift in Sources */,
 				D711BDAC248502A70099EB69 /* DebtModel.swift in Sources */,
+				D7A285DC24C3866D004EF954 /* EBRoundedTabBarItem.swift in Sources */,
 				D711BDB6248503F60099EB69 /* DebtCalendarViewController.swift in Sources */,
 				D711BD8E2484FD420099EB69 /* CurrencyCell.swift in Sources */,
 				D711BD8A2484FCEB0099EB69 /* CurrenciesViewController.swift in Sources */,
