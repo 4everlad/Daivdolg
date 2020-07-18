@@ -86,20 +86,6 @@ class DebtsViewController: UIViewController {
       tableView.deselectRow(at: selectedIndexPath, animated: true)
     }
   }
-  
-  @IBAction func addDebtTapped(_ sender: RoundButton) {
-    let debt = debtBook.getNewDebt()
-    let debtType = debtBook.currentDebtType
-    let debtViewController = DebtViewController(debt: debt, debtType: debtType, debtStatus: .new)
-    debtViewController.delegate = self
-    let debtNavigationController = UINavigationController(rootViewController: debtViewController)
-    if let navigationController = navigationController {
-      navigationController.present(debtNavigationController, animated: true)
-    }
-    if let selectedIndexPath = tableView.indexPathForSelectedRow {
-      tableView.deselectRow(at: selectedIndexPath, animated: true)
-    }
-  }
     
   @objc private func updateView() {
     if debtBook.isNoDebts == true {
