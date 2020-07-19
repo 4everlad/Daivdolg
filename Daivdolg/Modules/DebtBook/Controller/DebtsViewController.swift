@@ -25,7 +25,6 @@ class DebtsViewController: UIViewController {
     super.viewDidLoad()
     navigationItem.title = Constants.Texts.Main.title
     configureTableView()
-    configureAddButton()
     configureDebtTypeControl()
     updateView()
     nc.addObserver(self, selector: #selector(updateView), name: Notification.Name("updateView"), object: nil)
@@ -41,12 +40,6 @@ class DebtsViewController: UIViewController {
     tableView.dataSource = self
     tableView.delegate = self
     tableView.register(UINib(nibName: "DebtCell", bundle: nil), forCellReuseIdentifier: "DebtCell")
-  }
-  
-  private func configureAddButton() {
-    let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped(_:)))
-    rightButton.tintColor = UIColor.mainGreen
-    navigationItem.rightBarButtonItem = rightButton
   }
   
   private func configureDebtTypeControl() {
@@ -71,20 +64,6 @@ class DebtsViewController: UIViewController {
       break
     }
     tableView.reloadData()
-  }
-  
-  @objc private func addTapped(_ sender: UIButton) {
-    let debt = debtBook.getNewDebt()
-    let debtType = debtBook.currentDebtType
-    let debtViewController = DebtViewController(debt: debt, debtType: debtType, debtStatus: .new)
-    debtViewController.delegate = self
-    let debtNavigationController = UINavigationController(rootViewController: debtViewController)
-    if let navigationController = navigationController {
-      navigationController.present(debtNavigationController, animated: true)
-    }
-    if let selectedIndexPath = tableView.indexPathForSelectedRow {
-      tableView.deselectRow(at: selectedIndexPath, animated: true)
-    }
   }
     
   @objc private func updateView() {
