@@ -13,6 +13,7 @@ class DebtModel {
   var type: DebtType
   var amount: Float?
   var currency: String?
+  var description: String?
   var returnDate: Date?
   var creationDate: Date
   
