@@ -39,7 +39,7 @@ class StorageManager {
     }
     insertNewDebt.currency = debt.currency
     if let description = debt.description {
-      insertNewDebt.descrption = debt.description
+      insertNewDebt.descrption = description
     }
     if let returnDate = debt.returnDate {
       insertNewDebt.returnDate = returnDate
@@ -64,7 +64,7 @@ class StorageManager {
       }
       newDebt.currency = debt.currency
       if let description = debt.description {
-        newDebt.descrption = debt.description
+        newDebt.descrption = description
       }
       if let returnDate = debt.returnDate {
         newDebt.returnDate = returnDate

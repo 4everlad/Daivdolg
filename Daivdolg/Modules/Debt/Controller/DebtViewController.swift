@@ -64,6 +64,7 @@ class DebtViewController: UIViewController {
     configureLendBorrowButton()
     configureContactView()
     configureSumTextField()
+    configureDescriptionTextView()
     configureDateView()
     configureDebtView()
   }
@@ -88,6 +89,21 @@ class DebtViewController: UIViewController {
     sumTextField.layer.borderWidth = 0.0
     sumTextField.layer.borderColor = UIColor.clear.cgColor
   }
+    
+    private func configureDescriptionTextView() {
+        descriptionTextView.delegate = self
+        descriptionTextView.tintColor = UIColor.mainGreen
+        switch debtStatus {
+        case .new:
+            descriptionTextView.text = Constants.Texts.Debt.descriptionTextViewTitle
+        case .exist:
+            if let description = debt.description {
+                descriptionTextView.text = description
+            } else {
+                descriptionTextView.text = Constants.Texts.Debt.descriptionTextViewTitle
+            }
+        }
+    }
   
   private func configureDebtView() {
     switch debtStatus {
@@ -254,12 +270,33 @@ extension DebtViewController: CNContactPickerDelegate {
   }
 }
 
+// MARK: - TextField
 extension DebtViewController: UITextFieldDelegate {
   func textField(_ textField: UITextField,
                  shouldChangeCharactersIn range: NSRange,
                  replacementString string: String) -> Bool {
     return true
   }
+}
+
+// MARK: - TextView
+extension DebtViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if descriptionTextView.isFirstResponder {
+            if descriptionTextView.text == Constants.Texts.Debt.descriptionTextViewTitle {
+                descriptionTextView.text = nil
+            }
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if descriptionTextView.text.isEmpty || descriptionTextView.text == "" {
+            debt.description = nil
+            descriptionTextView.text = Constants.Texts.Debt.descriptionTextViewTitle
+        } else {
+            debt.description = descriptionTextView.text
+        }
+    }
 }
 
 // MARK: - DebtCalendarViewControllerDelegate

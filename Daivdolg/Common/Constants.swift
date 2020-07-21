@@ -27,6 +27,7 @@ struct Constants {
       static let dateViewTitle = "Выберите дату"
       static let alertTitle = "Введите имя"
       static let alertMessage = "Имя будет привязано к контакту"
+        static let descriptionTextViewTitle = "Введите описание"
     }
     struct Currencies {
       static let title = "Выбор валюты"

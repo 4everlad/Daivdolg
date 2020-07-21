@@ -109,6 +109,7 @@ class DebtBook {
       debt.amount = savedDebt.amount
       debt.type = DebtType(rawValue: savedDebt.type!)!
       debt.currency = savedDebt.currency
+        debt.description = savedDebt.descrption
       debt.returnDate = savedDebt.returnDate
       debt.creationDate = savedDebt.creationDate!
       debts.append(debt)
