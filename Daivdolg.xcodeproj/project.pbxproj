@@ -23,7 +23,7 @@
 		D711BD7924843EC60099EB69 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD7324843EC60099EB69 /* CoreDataStack.swift */; };
 		D711BD7A24843EC60099EB69 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD7424843EC60099EB69 /* Notifications.swift */; };
 		D711BD7B24843EC60099EB69 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD7524843EC60099EB69 /* StorageManager.swift */; };
-		D711BD862484FCD30099EB69 /* Currencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD852484FCD30099EB69 /* Currencies.swift */; };
+		D711BD862484FCD30099EB69 /* CurrenciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD852484FCD30099EB69 /* CurrenciesModel.swift */; };
 		D711BD882484FCE10099EB69 /* CurrenciesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D711BD872484FCE10099EB69 /* CurrenciesViewController.xib */; };
 		D711BD8A2484FCEB0099EB69 /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD892484FCEB0099EB69 /* CurrenciesViewController.swift */; };
 		D711BD8E2484FD420099EB69 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BD8C2484FD420099EB69 /* CurrencyCell.swift */; };
@@ -84,7 +84,7 @@
 		D711BD7324843EC60099EB69 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D711BD7424843EC60099EB69 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		D711BD7524843EC60099EB69 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		D711BD852484FCD30099EB69 /* Currencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currencies.swift; sourceTree = "<group>"; };
+		D711BD852484FCD30099EB69 /* CurrenciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesModel.swift; sourceTree = "<group>"; };
 		D711BD872484FCE10099EB69 /* CurrenciesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrenciesViewController.xib; sourceTree = "<group>"; };
 		D711BD892484FCEB0099EB69 /* CurrenciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
 		D711BD8C2484FD420099EB69 /* CurrencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 		D711BD822484FC020099EB69 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D711BD852484FCD30099EB69 /* Currencies.swift */,
+				D711BD852484FCD30099EB69 /* CurrenciesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -619,7 +619,7 @@
 				D711BD6B248438D50099EB69 /* UIFont+AppFonts.swift in Sources */,
 				D711BD9E248500D60099EB69 /* DebtsViewController.swift in Sources */,
 				D791C55C248AD17100DB410F /* ChoiseButton.swift in Sources */,
-				D711BD862484FCD30099EB69 /* Currencies.swift in Sources */,
+				D711BD862484FCD30099EB69 /* CurrenciesModel.swift in Sources */,
 				D711BD47248430F50099EB69 /* AppDelegate.swift in Sources */,
 				D711BD952484FFEC0099EB69 /* DebtBook.swift in Sources */,
 				D711BD9B2485007F0099EB69 /* DebtCell.swift in Sources */,
