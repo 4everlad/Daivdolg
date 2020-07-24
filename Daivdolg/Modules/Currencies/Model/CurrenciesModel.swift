@@ -8,18 +8,35 @@
 
 import Foundation
 
-struct Currency {
+struct Currency: Codable {
   
   var code: String
   var name: String
   
-  init(code: String, name: String) {
-    self.code = code
-    self.name = name
-  }
+    enum CodingKeys: String, CodingKey {
+        case code
+        case name
+    }
+//  init(code: String, name: String) {
+//    self.code = code
+//    self.name = name
+//  }
 }
 
-class Currencies {
+class Currencies: Codable {
+    var currencies: [Currency]
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let dict = try container.decode([String: String].self)
+
+        currencies = dict.map({ (key, value) in
+            return Currency(code: key, name: value)
+        })
+    }
+}
+
+class CurrenciesModel {
   
   // MARK: - properties
   var requestFetcher = APIRequestFetcher.shared
@@ -69,9 +86,7 @@ class Currencies {
     requestFetcher.fetchRequest(completionHandler: { result in
       switch result {
       case .success(let currencies):
-        DispatchQueue.main.async {
           self.currencies = currencies
-        }
       case .failure(let error):
         print(error.localizedDescription)
         DispatchQueue.main.async {

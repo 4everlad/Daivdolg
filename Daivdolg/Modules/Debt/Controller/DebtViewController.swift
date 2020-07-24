@@ -37,7 +37,7 @@ class DebtViewController: UIViewController {
   
   private var debt: DebtModel
   private var debtStatus: DebtStatus
-  private let currencies = Currencies()
+  private let currencies = CurrenciesModel()
   
   // MARK: - Init
     init(debt: DebtModel?, debtType: DebtType, debtStatus: DebtStatus) {

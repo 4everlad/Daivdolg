@@ -15,7 +15,7 @@ protocol CurrenciesViewControllerDelegate: class {
 class CurrenciesViewController: UIViewController {
   
   // MARK: - Properties
-  private var currenciesList: Currencies
+  private var currenciesList: CurrenciesModel
   weak var delegate: CurrenciesViewControllerDelegate?
   
   @IBOutlet private weak var tableView: UITableView!
@@ -30,7 +30,7 @@ class CurrenciesViewController: UIViewController {
   }
   
   // MARK: - Init
-  init(currencies: Currencies) {
+  init(currencies: CurrenciesModel) {
     self.currenciesList = currencies
     super.init(nibName: nil, bundle: nil)
   }

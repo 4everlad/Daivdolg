@@ -18,10 +18,9 @@ class APIRequestFetcher {
   
   static let shared = APIRequestFetcher()
   private let url = "http://openexchangerates.org/api/currencies.json"
+    private let accessKey = "e71ae13e1c38770edb39be3f2df67996"
   
   func fetchRequest(completionHandler: @escaping (Result<[Currency], NetworkError>) -> Void) {
-    let queue = DispatchQueue.global(qos: .utility)
-    queue.async {
       AF.request(self.url).validate().responseJSON { response in
         do {
           let decoder = JSONDecoder()
@@ -35,7 +34,5 @@ class APIRequestFetcher {
           completionHandler(.failure(.badURL))
         }
       }
-    }
-    
   }
 }
