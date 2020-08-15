@@ -17,22 +17,27 @@ enum NetworkError: Error {
 class APIRequestFetcher {
   
   static let shared = APIRequestFetcher()
-  private let url = "http://openexchangerates.org/api/currencies.json"
-    private let accessKey = "e71ae13e1c38770edb39be3f2df67996"
+  private let url = "https://currency13.p.rapidapi.com/list"
+  let parameters = ["rapidapi-key":"1e7714be28mshb5433aebbd095fap16bed0jsna54da8ce8d86"]
   
-  func fetchRequest(completionHandler: @escaping (Result<[Currency], NetworkError>) -> Void) {
-      AF.request(self.url).validate().responseJSON { response in
-        do {
+  func fetchRequest(completionHandler: @escaping (Result<Currencies, NetworkError>) -> Void) {
+        AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseData { response in
+          if let error = response.error {
+            print("Error received requestiong data: \(error.localizedDescription)")
+            completionHandler(.failure(.badURL))
+            return
+          }
           let decoder = JSONDecoder()
-          guard let data = response.data else {
-            completionHandler(.failure(.decodingError))
-            return }
-          let currenciesDictionary = try decoder.decode([String: String].self, from: data)
-          let currencies = currenciesDictionary.map({ Currency(code: $0.key, name: $0.value) })
-          completionHandler(.success(currencies))
-        } catch {
-          completionHandler(.failure(.badURL))
-        }
-      }
+          do {
+            guard let data = response.data else {
+              completionHandler(.failure(.decodingError))
+              return }
+            let currencies = try decoder.decode(Currencies.self, from: data)
+            completionHandler(.success(currencies))
+          } catch {
+            print()
+            completionHandler(.failure(.badURL))
+          }
+    }
   }
 }

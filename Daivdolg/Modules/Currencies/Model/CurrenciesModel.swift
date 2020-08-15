@@ -8,32 +8,14 @@
 
 import Foundation
 
-struct Currency: Codable {
-  
+struct Currency: Decodable {
   var code: String
   var name: String
-  
-    enum CodingKeys: String, CodingKey {
-        case code
-        case name
-    }
-//  init(code: String, name: String) {
-//    self.code = code
-//    self.name = name
-//  }
+  var symbol: String?
 }
 
-class Currencies: Codable {
+struct Currencies: Decodable {
     var currencies: [Currency]
-    
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        let dict = try container.decode([String: String].self)
-
-        currencies = dict.map({ (key, value) in
-            return Currency(code: key, name: value)
-        })
-    }
 }
 
 class CurrenciesModel {
@@ -86,7 +68,7 @@ class CurrenciesModel {
     requestFetcher.fetchRequest(completionHandler: { result in
       switch result {
       case .success(let currencies):
-          self.currencies = currencies
+        self.currencies = currencies.currencies
       case .failure(let error):
         print(error.localizedDescription)
         DispatchQueue.main.async {
