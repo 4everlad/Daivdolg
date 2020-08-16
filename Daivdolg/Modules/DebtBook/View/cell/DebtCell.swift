@@ -25,9 +25,13 @@ class DebtCell: UITableViewCell, DebtCellConfiguration {
       case .lend:
         moneyAmountLabel.textColor = UIColor.mainGreen
         currencyLabel.textColor = UIColor.mainGreen
+        convertedMoneyAmountLabel.textColor = UIColor.mainGreen
+        convertedCurrencyLabel.textColor = UIColor.mainGreen
       case .borrow:
         moneyAmountLabel.textColor = UIColor.debtRed
         currencyLabel.textColor = UIColor.debtRed
+        convertedMoneyAmountLabel.textColor = UIColor.debtRed
+        convertedCurrencyLabel.textColor = UIColor.debtRed
       case .none:
         return
       }
@@ -37,6 +41,12 @@ class DebtCell: UITableViewCell, DebtCellConfiguration {
   var currency: String? {
     didSet {
       currencyLabel.text = currency
+    }
+  }
+  
+  var convertedCurrency: String? {
+    didSet {
+      convertedCurrencyLabel.text = convertedCurrency
     }
   }
   
@@ -57,6 +67,14 @@ class DebtCell: UITableViewCell, DebtCellConfiguration {
     didSet {
       guard let moneyAmount = moneyAmount else { return }
       moneyAmountLabel.text = String(moneyAmount)
+      convertedStackView.isHidden = false
+    }
+  }
+  
+  var convertedMoneyAmount: Float? {
+    didSet {
+      guard let convertedMoneyAmount = convertedMoneyAmount else { return }
+      convertedMoneyAmountLabel.text = String(convertedMoneyAmount)
     }
   }
   
@@ -64,6 +82,10 @@ class DebtCell: UITableViewCell, DebtCellConfiguration {
   @IBOutlet private weak var moneyAmountLabel: UILabel!
   @IBOutlet private  weak var returnDateLabel: UILabel!
   @IBOutlet private weak var currencyLabel: UILabel!
+  @IBOutlet weak var convertedStackView: UIStackView!
+  @IBOutlet weak var convertedMoneyAmountLabel: UILabel!
+  @IBOutlet weak var convertedCurrencyLabel: UILabel!
+  
   
   override func awakeFromNib() {
     super.awakeFromNib()

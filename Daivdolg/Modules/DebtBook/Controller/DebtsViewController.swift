@@ -100,6 +100,12 @@ extension DebtsViewController: UITableViewDelegate, UITableViewDataSource {
       tableViewCell.moneyAmount = debt.amount
       tableViewCell.currency = debt.currency
       tableViewCell.debtType = debt.type
+      if debt.convertedAmount != nil {
+        tableViewCell.convertedMoneyAmount = debt.convertedAmount
+        tableViewCell.convertedCurrency = debtBook.mainCurrency
+      } else {
+        tableViewCell.convertedStackView.isHidden = true
+      }
     }
     return tableViewCell
   }
