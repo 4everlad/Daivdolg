@@ -16,7 +16,7 @@ struct Currency: Decodable {
 
 struct ConvertedCurrency: Decodable {
   var time: String
-  var amount: String
+  var amount: Float
 }
 
 struct Currencies: Decodable {

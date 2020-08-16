@@ -120,20 +120,22 @@ class DebtBook {
       if let debtAmount = debt.amount, let from = debt.currency {
         let amount = String(debtAmount)
         if from != mainCurrency {
-          convertCurrency(amount: amount, from: from, to: mainCurrency, completionHandler: {_ in
-            
+          convertCurrency(amount: amount, from: from, to: mainCurrency, completionHandler: { amount in
+            debt.convertedAmount = amount
           })
         }
       }
     }
   }
   
-  private func convertCurrency(amount: String, from: String, to: String, completionHandler: @escaping(String?)->Void) {
+  private func convertCurrency(amount: String, from: String, to: String, completionHandler: @escaping(Float?)->Void) {
     requestFetcher.fetchConvertedCurrency(amount: amount, from: from, to: to, completionHandler: { result in
       switch result {
-      case .success(_):
-        completionHandler(nil)
-      case .failure(_):
+      case .success(let convertedCurrency):
+        let amount = convertedCurrency.amount
+        completionHandler(amount)
+      case .failure(let error):
+        print(error.localizedDescription)
         completionHandler(nil)
       }
     })
