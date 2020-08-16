@@ -14,6 +14,11 @@ struct Currency: Decodable {
   var symbol: String?
 }
 
+struct ConvertedCurrency: Decodable {
+  var time: String
+  var amount: String
+}
+
 struct Currencies: Decodable {
     var currencies: [Currency]
 }
@@ -65,7 +70,7 @@ class CurrenciesModel {
   
   // MARK: - Private methods
   private func getCurrencies() {
-    requestFetcher.fetchRequest(completionHandler: { result in
+    requestFetcher.fetchCurrenciesList(completionHandler: { result in
       switch result {
       case .success(let currencies):
         self.currencies = currencies.currencies

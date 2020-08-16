@@ -13,6 +13,7 @@ class DebtBook {
   // MARK: - Properties
   var storageManager = StorageManager.shared
   private let userDataStorage = UserDataStorage.shared
+  private let requestFetcher = APIRequestFetcher.shared
   private let notifications = Notifications.shared
   private let notificationCenter = NotificationCenter.default
   
@@ -23,6 +24,7 @@ class DebtBook {
     }
   }
   
+  var mainCurrency: String = "RUB"
   var currentDebtType: DebtType = .lend
   
   var isNoDebts: Bool {
@@ -114,6 +116,28 @@ class DebtBook {
       debt.creationDate = savedDebt.creationDate!
       debts.append(debt)
     }
+    for debt in debts {
+      if let debtAmount = debt.amount, let from = debt.currency {
+        let amount = String(debtAmount)
+        if from != mainCurrency {
+          convertCurrency(amount: amount, from: from, to: mainCurrency, completionHandler: {_ in
+            
+          })
+        }
+      }
+    }
+  }
+  
+  private func convertCurrency(amount: String, from: String, to: String, completionHandler: @escaping(String?)->Void) {
+    requestFetcher.fetchConvertedCurrency(amount: amount, from: from, to: to, completionHandler: { result in
+      switch result {
+      case .success(_):
+        completionHandler(nil)
+      case .failure(_):
+        completionHandler(nil)
+      }
+    })
+    
   }
   
   private func getDebtNotifications() {
