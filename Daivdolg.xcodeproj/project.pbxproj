@@ -47,6 +47,7 @@
 		D711BDC32485074C0099EB69 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = D711BDC22485074C0099EB69 /* currencies.json */; };
 		D715343D2488819200633C69 /* DaivdolgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D715343C2488819200633C69 /* DaivdolgTests.swift */; };
 		D791C55C248AD17100DB410F /* ChoiseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D791C55B248AD17100DB410F /* ChoiseButton.swift */; };
+		D7957CC624E9838600F9B71F /* Float+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7957CC524E9838600F9B71F /* Float+toString.swift */; };
 		D7A285DC24C3866D004EF954 /* EBRoundedTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A285DB24C3866D004EF954 /* EBRoundedTabBarItem.swift */; };
 		D7C17000248EEFE7001B33DA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C16FFF248EEFE7001B33DA /* TextField.swift */; };
 		D7C17002248EF4BE001B33DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C17001248EF4BE001B33DA /* LaunchScreen.xib */; };
@@ -110,6 +111,7 @@
 		D715343C2488819200633C69 /* DaivdolgTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaivdolgTests.swift; sourceTree = "<group>"; };
 		D715343E2488819200633C69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D791C55B248AD17100DB410F /* ChoiseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseButton.swift; sourceTree = "<group>"; };
+		D7957CC524E9838600F9B71F /* Float+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+toString.swift"; sourceTree = "<group>"; };
 		D7A285DB24C3866D004EF954 /* EBRoundedTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBRoundedTabBarItem.swift; sourceTree = "<group>"; };
 		D7C16FFF248EEFE7001B33DA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		D7C17001248EF4BE001B33DA /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				D711BD69248438D50099EB69 /* UIColor+AppColors.swift */,
 				D711BD67248438D50099EB69 /* UIFont+AppFonts.swift */,
 				D711BD6A248438D50099EB69 /* UIViewController+dismissKeyboard.swift */,
+				D7957CC524E9838600F9B71F /* Float+toString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				D711BDAA248502620099EB69 /* CreateButton.swift in Sources */,
 				D7C17000248EEFE7001B33DA /* TextField.swift in Sources */,
 				D711BD6D248438D50099EB69 /* UIColor+AppColors.swift in Sources */,
+				D7957CC624E9838600F9B71F /* Float+toString.swift in Sources */,
 				D711BD652484377D0099EB69 /* DataTypes.swift in Sources */,
 				D711BD49248430F50099EB69 /* SceneDelegate.swift in Sources */,
 				D711BDBC248504BD0099EB69 /* SettingsViewController.swift in Sources */,

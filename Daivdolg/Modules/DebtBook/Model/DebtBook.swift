@@ -120,8 +120,10 @@ class DebtBook {
       if let debtAmount = debt.amount, let from = debt.currency {
         let amount = String(debtAmount)
         if from != mainCurrency {
-          convertCurrency(amount: amount, from: from, to: mainCurrency, completionHandler: { amount in
-            debt.convertedAmount = amount
+          convertCurrency(amount: amount, from: from, to: mainCurrency, completionHandler: { currencyRate in
+            if let currencyRate = currencyRate {
+              debt.convertedAmount = debtAmount * currencyRate
+            }
           })
         }
       }

@@ -13,8 +13,10 @@ protocol DebtCellConfiguration {
   var name: String? { get set }
   var returnDate: Date? { get set }
   var moneyAmount: Float? { get set }
+  var convertedMoneyAmount: Float? { get set }
   var currency: String? { get set }
-  var debtType: DebtType? {get set }
+  var convertedCurrency: String? { get set } 
+  var debtType: DebtType? { get set }
 }
 
 class DebtCell: UITableViewCell, DebtCellConfiguration {
@@ -66,7 +68,7 @@ class DebtCell: UITableViewCell, DebtCellConfiguration {
   var moneyAmount: Float? {
     didSet {
       guard let moneyAmount = moneyAmount else { return }
-      moneyAmountLabel.text = String(moneyAmount)
+      moneyAmountLabel.text = moneyAmount.floatAsCurrency
       convertedStackView.isHidden = false
     }
   }
@@ -74,7 +76,7 @@ class DebtCell: UITableViewCell, DebtCellConfiguration {
   var convertedMoneyAmount: Float? {
     didSet {
       guard let convertedMoneyAmount = convertedMoneyAmount else { return }
-      convertedMoneyAmountLabel.text = String(convertedMoneyAmount)
+      convertedMoneyAmountLabel.text = convertedMoneyAmount.floatAsCurrency
     }
   }
   
@@ -85,7 +87,6 @@ class DebtCell: UITableViewCell, DebtCellConfiguration {
   @IBOutlet weak var convertedStackView: UIStackView!
   @IBOutlet weak var convertedMoneyAmountLabel: UILabel!
   @IBOutlet weak var convertedCurrencyLabel: UILabel!
-  
   
   override func awakeFromNib() {
     super.awakeFromNib()
