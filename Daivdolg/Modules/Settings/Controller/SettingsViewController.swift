@@ -35,6 +35,7 @@ class SettingsViewController: UIViewController {
     } else {
       notificationsSwitch.isOn = false
     }
+    currencyButton.setTitle(userDataStorage.mainCurrency, for: .normal)
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -85,7 +86,7 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: CurrenciesViewControllerDelegate {
   func setCurrency(code: String) {
-    
+    userDataStorage.mainCurrency = code
     currencyButton.setTitle(code, for: .normal)
   }
 }

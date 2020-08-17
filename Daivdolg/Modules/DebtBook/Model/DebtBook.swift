@@ -24,7 +24,11 @@ class DebtBook {
     }
   }
   
-  var mainCurrency: String = "RUB"
+  var mainCurrency: String {
+    didSet {
+      convertAllDebts()
+    }
+  }
   var currentDebtType: DebtType = .lend
   
   var isNoDebts: Bool {
@@ -37,6 +41,7 @@ class DebtBook {
   
   // MARK: - Init
   init() {
+    mainCurrency = userDataStorage.mainCurrency
     getAllDebts()
     getLendDebts()
     convertAllDebts()
@@ -129,6 +134,7 @@ class DebtBook {
           convertCurrency(amount: amount, from: from, to: mainCurrency, completionHandler: { currencyRate in
             if let currencyRate = currencyRate {
               debt.convertedAmount = debtAmount * currencyRate
+              self.notificationCenter.post(name: Notification.Name("updateView"), object: nil)
             }
           })
         }
@@ -143,6 +149,7 @@ class DebtBook {
       convertCurrency(amount: amount, from: from, to: mainCurrency, completionHandler: { currencyRate in
         if let currencyRate = currencyRate {
           debt.convertedAmount = debtAmount * currencyRate
+          self.notificationCenter.post(name: Notification.Name("updateView"), object: nil)
         }
       })
     }

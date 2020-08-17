@@ -17,6 +17,7 @@ class UserDataStorage {
     static let isAuthenticationRequired = "isAuthenticationRequired"
     static let isNotificationsRequired = "isNotificationsRequired"
     static let currentDebtType = "currentDebtType"
+    static let mainCurrency = "mainCurrency"
   }
   
   required init(userDefaults: UserDefaults = UserDefaults.standard) {
@@ -50,6 +51,18 @@ class UserDataStorage {
     }
     set(debtType) {
       UserDefaults.standard.set(debtType?.rawValue, forKey: UserDefaultsKeys.currentDebtType)
+    }
+  }
+  
+  var mainCurrency: String {
+    get {
+      guard let debtType = userDefaults.string(forKey: UserDefaultsKeys.mainCurrency) else {
+        return "RUB"
+      }
+      return debtType
+    }
+    set {
+      userDefaults.set(newValue, forKey: UserDefaultsKeys.mainCurrency)
     }
   }
 }
