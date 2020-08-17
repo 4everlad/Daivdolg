@@ -39,6 +39,7 @@ class DebtBook {
   init() {
     getAllDebts()
     getLendDebts()
+    convertAllDebts()
     let isNotificationsRequired = userDataStorage.isNotificationsRequired
     if isNotificationsRequired {
       getDebtNotifications()
@@ -63,7 +64,8 @@ class DebtBook {
   }
   
   func addDebt(debt: DebtModel) {
-    storageManager.saveDebt(debt: debt)
+    let convertedDebt = convertDebt(debt: debt)
+    storageManager.saveDebt(debt: convertedDebt)
     debts.append(debt)
     switch debt.type {
     case .lend:
@@ -85,7 +87,8 @@ class DebtBook {
   }
   
   func changeDebt(debt: DebtModel) {
-    storageManager.updateDebt(debt: debt)
+    let convertedDebt = convertDebt(debt: debt)
+    storageManager.updateDebt(debt: convertedDebt)
     switch debt.type {
     case .lend:
       getLendDebts()
@@ -116,6 +119,9 @@ class DebtBook {
       debt.creationDate = savedDebt.creationDate!
       debts.append(debt)
     }
+  }
+  
+  private func convertAllDebts() {
     for debt in debts {
       if let debtAmount = debt.amount, let from = debt.currency {
         let amount = String(debtAmount)
@@ -130,7 +136,20 @@ class DebtBook {
     }
   }
   
-  private func convertCurrency(amount: String, from: String, to: String, completionHandler: @escaping(Float?)->Void) {
+  private func convertDebt(debt: DebtModel) -> DebtModel {
+    guard let debtAmount = debt.amount, let from = debt.currency else { return debt }
+    let amount = String(debtAmount)
+    if from != mainCurrency {
+      convertCurrency(amount: amount, from: from, to: mainCurrency, completionHandler: { currencyRate in
+        if let currencyRate = currencyRate {
+          debt.convertedAmount = debtAmount * currencyRate
+        }
+      })
+    }
+    return debt
+  }
+  
+  private func convertCurrency(amount: String, from: String, to: String, completionHandler: @escaping(Float?) -> Void) {
     requestFetcher.fetchConvertedCurrency(amount: amount, from: from, to: to, completionHandler: { result in
       switch result {
       case .success(let convertedCurrency):

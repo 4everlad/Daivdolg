@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Daivdolg" customModuleProvider="target">
             <connections>
                 <outlet property="authenticationSwitch" destination="24i-rO-Ygd" id="bhy-oe-SSE"/>
+                <outlet property="currencyButton" destination="inz-o2-YaB" id="BX3-Ig-fHi"/>
                 <outlet property="notificationsSwitch" destination="9CY-ca-3vz" id="THQ-zP-ccr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="c0e-gU-0Un">
-                    <rect key="frame" x="16" y="16" width="343" height="111"/>
+                    <rect key="frame" x="16" y="16" width="343" height="172"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KN3-by-3cC">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
@@ -79,6 +80,52 @@
                                 <constraint firstItem="9CY-ca-3vz" firstAttribute="leading" secondItem="1bB-f0-0np" secondAttribute="trailing" constant="16" id="gnO-oE-gJW"/>
                                 <constraint firstItem="1bB-f0-0np" firstAttribute="centerY" secondItem="zR8-nG-D7F" secondAttribute="centerY" id="lvU-IJ-2ek"/>
                                 <constraint firstItem="9CY-ca-3vz" firstAttribute="centerY" secondItem="zR8-nG-D7F" secondAttribute="centerY" id="tfm-uS-BFF"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcY-FA-OPQ">
+                            <rect key="frame" x="0.0" y="116" width="343" height="1"/>
+                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="VXc-YE-cc4"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glw-dm-bPi">
+                            <rect key="frame" x="0.0" y="122" width="343" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Основная валюта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxP-fw-ddu">
+                                    <rect key="frame" x="0.0" y="15" width="140" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inz-o2-YaB">
+                                    <rect key="frame" x="298" y="2.5" width="45" height="45"/>
+                                    <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="6Yd-OI-VjK"/>
+                                        <constraint firstAttribute="width" constant="45" id="fdK-QX-f9G"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                    <state key="normal" title="RUB">
+                                        <color key="titleColor" red="0.094117647060000004" green="0.65098039220000004" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="currencyTapped:" destination="-1" eventType="touchUpInside" id="iHa-HB-t6k"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="MxP-fw-ddu" firstAttribute="centerY" secondItem="glw-dm-bPi" secondAttribute="centerY" id="TZr-RB-Tzv"/>
+                                <constraint firstAttribute="height" constant="50" id="VDc-KA-3JG"/>
+                                <constraint firstItem="inz-o2-YaB" firstAttribute="centerY" secondItem="glw-dm-bPi" secondAttribute="centerY" id="XvX-TT-nsW"/>
+                                <constraint firstAttribute="trailing" secondItem="inz-o2-YaB" secondAttribute="trailing" id="pxs-fh-Znf"/>
+                                <constraint firstItem="MxP-fw-ddu" firstAttribute="leading" secondItem="glw-dm-bPi" secondAttribute="leading" id="tEB-rS-ZSs"/>
                             </constraints>
                         </view>
                     </subviews>

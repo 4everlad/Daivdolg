@@ -29,7 +29,7 @@ class DebtViewController: UIViewController {
   @IBOutlet private weak var borrowDebtButton: ChoiseButton!
   @IBOutlet private weak var sumTextField: TextField!
   @IBOutlet private weak var currencyButton: UIButton!
-  @IBOutlet weak var descriptionTextView: UITextView!
+  @IBOutlet private weak var descriptionTextView: UITextView!
   @IBOutlet private weak var dateView: DateView!
   
   private let contactButton = UIButton()

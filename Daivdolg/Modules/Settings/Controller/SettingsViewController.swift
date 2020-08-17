@@ -14,10 +14,12 @@ class SettingsViewController: UIViewController {
   // MARK: - Properties
   @IBOutlet private weak var authenticationSwitch: UISwitch!
   @IBOutlet private weak var notificationsSwitch: UISwitch!
+  @IBOutlet private weak var currencyButton: UIButton!
   
   private let authenticationService = AuthenticationService()
   private let userDataStorage = UserDataStorage.shared
   private let notifications = Notifications.shared
+  private let currencies = CurrenciesModel()
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -59,6 +61,15 @@ class SettingsViewController: UIViewController {
     }
   }
   
+  @IBAction func currencyTapped(_ sender: Any) {
+    let currenciesViewController = CurrenciesViewController(currencies: currencies)
+    currenciesViewController.delegate = self
+    let currenciesNavigationController = UINavigationController(rootViewController: currenciesViewController)
+    if let navigationController = navigationController {
+      navigationController.present(currenciesNavigationController, animated: true)
+    }
+  }
+  
   // MARK: - Private methods
   private func changeAuthSetting() {
     if self.authenticationSwitch.isOn {
@@ -70,4 +81,11 @@ class SettingsViewController: UIViewController {
     }
   }
   
+}
+
+extension SettingsViewController: CurrenciesViewControllerDelegate {
+  func setCurrency(code: String) {
+    
+    currencyButton.setTitle(code, for: .normal)
+  }
 }
