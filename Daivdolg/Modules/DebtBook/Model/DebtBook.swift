@@ -26,7 +26,7 @@ class DebtBook {
   
   var mainCurrency: String {
     didSet {
-      notificationCenter.post(name: Notification.Name("updateTableView"), object: nil)
+      convertAllDebts()
     }
   }
   var currentDebtType: DebtType = .lend
@@ -112,6 +112,13 @@ class DebtBook {
     debts.remove(at: index!)
   }
   
+  func changeMainCurrency() {
+    let newMainCurrency = userDataStorage.mainCurrency
+    if mainCurrency != newMainCurrency {
+      mainCurrency = newMainCurrency
+    }
+  }
+  
   // MARK: - Private methods
   private func getAllDebts() {
     guard let savedDebts = storageManager.loadDebts() else { return }
@@ -139,12 +146,14 @@ class DebtBook {
               self.notificationCenter.post(name: Notification.Name("updateTableView"), object: nil)
             }
           })
+        } else {
+          debt.convertedAmount = nil
         }
       }
     }
   }
   
-  private func convertDebt(debt: DebtModel, completionHandler: @escaping(DebtModel) -> Void){
+  private func convertDebt(debt: DebtModel, completionHandler: @escaping(DebtModel) -> Void) {
     guard let debtAmount = debt.amount, let from = debt.currency else { return }
     let amount = String(debtAmount)
     if from != mainCurrency {
@@ -155,6 +164,8 @@ class DebtBook {
           completionHandler(debt)
         }
       })
+    } else {
+      debt.convertedAmount = nil
     }
   }
   

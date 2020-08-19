@@ -36,6 +36,11 @@ class DebtsViewController: UIViewController {
     userDataStorage.currentDebtType = .lend
     }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    debtBook.changeMainCurrency()
+  }
+  
   // MARK: - Configure
   private func configureTableView() {
     tableView.dataSource = self
