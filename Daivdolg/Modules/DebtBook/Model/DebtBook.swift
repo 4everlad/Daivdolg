@@ -137,19 +137,9 @@ class DebtBook {
   
   private func convertAllDebts() {
     for debt in debts {
-      if let debtAmount = debt.amount, let from = debt.currency {
-        let amount = String(debtAmount)
-        if from != mainCurrency {
-          convertCurrency(amount: amount, from: from, to: mainCurrency, completionHandler: { currencyRate in
-            if let currencyRate = currencyRate {
-              debt.convertedAmount = debtAmount * currencyRate
-              self.notificationCenter.post(name: Notification.Name("updateTableView"), object: nil)
-            }
-          })
-        } else {
-          debt.convertedAmount = nil
-        }
-      }
+      convertDebt(debt: debt, completionHandler: { newDebt in
+        debt.convertedAmount = newDebt.convertedAmount
+      })
     }
   }
   
