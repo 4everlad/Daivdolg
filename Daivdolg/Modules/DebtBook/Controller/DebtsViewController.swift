@@ -28,6 +28,7 @@ class DebtsViewController: UIViewController {
     configureDebtTypeControl()
     updateView()
     nc.addObserver(self, selector: #selector(updateView), name: Notification.Name("updateView"), object: nil)
+    nc.addObserver(self, selector: #selector(updateTableView), name: Notification.Name("updateTableView"), object: nil)
     if let navController = navigationController {
       navController.navigationBar.titleTextAttributes =
         [NSAttributedString.Key.foregroundColor: UIColor.mainGreen]
@@ -76,6 +77,9 @@ class DebtsViewController: UIViewController {
     }
   }
 
+  @objc private func updateTableView() {
+    tableView.reloadData()
+  }
 }
 
 // MARK: - UITableView

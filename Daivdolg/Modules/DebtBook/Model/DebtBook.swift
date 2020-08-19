@@ -26,7 +26,7 @@ class DebtBook {
   
   var mainCurrency: String {
     didSet {
-      convertAllDebts()
+      notificationCenter.post(name: Notification.Name("updateTableView"), object: nil)
     }
   }
   var currentDebtType: DebtType = .lend
@@ -69,15 +69,16 @@ class DebtBook {
   }
   
   func addDebt(debt: DebtModel) {
-    let convertedDebt = convertDebt(debt: debt)
-    storageManager.saveDebt(debt: convertedDebt)
-    debts.append(debt)
-    switch debt.type {
-    case .lend:
-      getLendDebts()
-    case .borrow:
-      getBorrowDebts()
-    }
+    convertDebt(debt: debt, completionHandler: { debt in
+      self.storageManager.saveDebt(debt: debt)
+      self.debts.append(debt)
+      switch debt.type {
+      case .lend:
+        self.getLendDebts()
+      case .borrow:
+        self.getBorrowDebts()
+      }
+    })
   }
   
   func getNewDebt() -> DebtModel {
@@ -92,14 +93,15 @@ class DebtBook {
   }
   
   func changeDebt(debt: DebtModel) {
-    let convertedDebt = convertDebt(debt: debt)
-    storageManager.updateDebt(debt: convertedDebt)
-    switch debt.type {
-    case .lend:
-      getLendDebts()
-    case .borrow:
-      getBorrowDebts()
-    }
+    convertDebt(debt: debt, completionHandler: { debt in
+      self.storageManager.updateDebt(debt: debt)
+      switch debt.type {
+      case .lend:
+        self.getLendDebts()
+      case .borrow:
+        self.getBorrowDebts()
+      }
+    })
   }
   
   func removeDebt(at indexPath: Int) {
@@ -134,7 +136,7 @@ class DebtBook {
           convertCurrency(amount: amount, from: from, to: mainCurrency, completionHandler: { currencyRate in
             if let currencyRate = currencyRate {
               debt.convertedAmount = debtAmount * currencyRate
-              self.notificationCenter.post(name: Notification.Name("updateView"), object: nil)
+              self.notificationCenter.post(name: Notification.Name("updateTableView"), object: nil)
             }
           })
         }
@@ -142,18 +144,18 @@ class DebtBook {
     }
   }
   
-  private func convertDebt(debt: DebtModel) -> DebtModel {
-    guard let debtAmount = debt.amount, let from = debt.currency else { return debt }
+  private func convertDebt(debt: DebtModel, completionHandler: @escaping(DebtModel) -> Void){
+    guard let debtAmount = debt.amount, let from = debt.currency else { return }
     let amount = String(debtAmount)
     if from != mainCurrency {
       convertCurrency(amount: amount, from: from, to: mainCurrency, completionHandler: { currencyRate in
         if let currencyRate = currencyRate {
           debt.convertedAmount = debtAmount * currencyRate
-          self.notificationCenter.post(name: Notification.Name("updateView"), object: nil)
+          self.notificationCenter.post(name: Notification.Name("updateTableView"), object: nil)
+          completionHandler(debt)
         }
       })
     }
-    return debt
   }
   
   private func convertCurrency(amount: String, from: String, to: String, completionHandler: @escaping(Float?) -> Void) {
