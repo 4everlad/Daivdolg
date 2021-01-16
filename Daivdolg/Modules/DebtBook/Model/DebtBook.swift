@@ -20,7 +20,7 @@ class DebtBook {
   private var debts: [DebtModel] = []
   private var filteredDebts: [DebtModel] = [] {
     didSet {
-        notificationCenter.post(name: Notification.Name("updateView"), object: nil)
+        notificationCenter.post(name: Notification.Name("updateTableView"), object: nil)
     }
   }
   
@@ -155,7 +155,8 @@ class DebtBook {
         }
       })
     } else {
-      debt.convertedAmount = nil
+        debt.convertedAmount = nil
+        completionHandler(debt)
     }
   }
   
